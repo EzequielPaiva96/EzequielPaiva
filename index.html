@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiva Soluções Tecnológicas | Sua Parceira em Serviços de TI</title>
+    <!-- Carregamento do Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar Inter (ou fallback sans) e paleta neutra/cinza -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilos adicionais para o carregamento/efeitos */
+        .loading-animation {
+            border-top-color: #38BDF8;
+            -webkit-animation: spinner 1s linear infinite;
+            animation: spinner 1s linear infinite;
+        }
+        @-webkit-keyframes spinner {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        @keyframes spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fundo-principal': '#18181B', // neutral-900 - Cinza muito escuro
+                        'cartao': '#27272A', // neutral-800 - Cinza escuro para cards
+                        'acento': '#38BDF8', // sky-400 - Um toque de azul claro para contraste
+                        'texto-claro': '#F4F4F5', // neutral-50 - Texto principal
+                        'texto-secundario': '#A1A1AA', // neutral-400 - Texto de apoio
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-fundo-principal text-texto-claro min-h-screen">
+
+    <!-- Header e Navegação -->
+    <header class="sticky top-0 z-50 bg-fundo-principal/90 backdrop-blur-md shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tight text-acento">
+                Paiva <span class="text-texto-claro">Soluções Tecnológicas</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#servicos" class="hover:text-acento transition duration-300">Serviços</a>
+                <a href="#inovacao" class="hover:text-acento transition duration-300">IA & Otimização</a> <!-- NOVO LINK -->
+                <a href="#contato" class="hover:text-acento transition duration-300">Contato</a>
+            </div>
+            <a href="#contato" class="hidden md:block bg-acento text-fundo-principal font-bold py-2 px-4 rounded-lg hover:bg-sky-300 transition duration-300 shadow-md">
+                Fale Conosco
+            </a>
+            <!-- Menu Hamburguer para Mobile (simplificado) -->
+            <button class="md:hidden text-texto-claro focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção Hero Principal -->
+        <section class="relative pt-24 pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Efeito sutil de brilho cinza escuro para fundo -->
+                <div class="absolute inset-0 bg-gradient-to-t from-fundo-principal to-transparent opacity-50"></div>
+                
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+                    <span class="block text-texto-claro">Infraestrutura e</span>
+                    <span class="block text-acento">Segurança de TI</span>
+                    <span class="block text-texto-claro">Elevadas.</span>
+                </h1>
+                
+                <p class="mt-4 max-w-3xl mx-auto text-xl text-texto-secundario mb-4">
+                    Sua parceira estratégica na gestão completa de TI: de <strong>reparos</strong> essenciais à <strong>cibersegurança</strong> avançada e <strong>redes</strong> estruturadas.
+                </p>
+
+                <!-- ELEMENTO: ÊNFASE NA CONFIANÇA -->
+                <p class="text-lg font-extrabold text-acento mb-10">
+                   A SOLUÇÃO CONFIÁVEL QUE SUA EMPRESA PRECISA
+                </p>
+                <!-- FIM DO ELEMENTO -->
+                
+                <a href="#servicos" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-10 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-xl">
+                    Explore Nossos Serviços
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section id="servicos" class="py-20 md:py-28 bg-cartao/50 border-t border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16 text-texto-claro">O Que Oferecemos</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Cabeamento Estruturado -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Cabeamento Estruturado</h3>
+                        <p class="text-texto-secundario">Projetamos e instalamos redes de dados e voz de alta performance, garantindo velocidade, organização e escalabilidade para o seu negócio.</p>
+                    </div>
+
+                    <!-- Card 2: Acessoria de Rede e Firewall -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9h-3a8 8 0 00-8 8m-3-3l3-3m0 0l3 3m-3-3V3"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Consultoria e Firewall</h3>
+                        <p class="text-texto-secundario">Otimização da sua infraestrutura de rede, gerenciamento de acesso e configurações robustas de firewall para máxima performance e segurança.</p>
+                    </div>
+
+                    <!-- Card 3: Cibersegurança Proativa -->
+                    <div id="seguranca" class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.066 12.066 0 002 12c0 2.831.97 5.441 2.618 7.519M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Cibersegurança Avançada</h3>
+                        <p class="text-texto-secundario">Defesa completa contra ameaças digitais. Análise de vulnerabilidades, políticas de segurança e monitoramento 24/7 para proteger seus dados.</p>
+                    </div>
+                    
+                    <!-- Card 4: Gestão de Acesso (Captive Portal) -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6-6v4m12-4v4m-3 0V7m-6 4v3m0 0V5"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Captive Portal e Controle</h3>
+                        <p class="text-texto-secundario">Implementação de portais cativos personalizados para controle de acesso Wi-Fi, coleta de dados e conformidade legal em ambientes públicos.</p>
+                    </div>
+
+                    <!-- Card 5: Reparos em Impressoras -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2v1H5v-1h2v-2H5V6a2 2 0 012-2h10a2 2 0 012 2v10h-2V6h-4V4H10v2H7v11z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Reparo de Impressoras</h3>
+                        <p class="text-texto-secundario">Suporte técnico rápido e eficiente para impressoras de todas as marcas e modelos, minimizando o tempo de inatividade e garantindo a produtividade.</p>
+                    </div>
+
+                    <!-- Card 6: Desenvolvimento de Aplicativos -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <!-- Ícone de Código/App -->
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Desenvolvimento de Aplicativos</h3>
+                        <p class="text-texto-secundario">Criação de soluções de software personalizadas, desde aplicativos corporativos de grande porte até ferramentas que otimizam tarefas diárias.</p>
+                    </div>
+
+                    <!-- Card 7: Monitoramento CFTV -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <!-- Ícone de Câmera de Vigilância -->
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.55-2.275A.75.75 0 0120 7.5v9a.75.75 0 01-.45.675L15 15m-1-5H5a2 2 0 00-2 2v4a2 2 0 002 2h8a2 2 0 002-2v-4a2 2 0 00-2-2z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Monitoramento CFTV</h3>
+                        <p class="text-texto-secundario">Instalação, configuração e manutenção de sistemas de Circuito Fechado de Televisão (CFTV) para vigilância e segurança patrimonial.</p>
+                    </div>
+
+                    <!-- Card 8: Consultoria de Hardware -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <!-- Ícone de Carrinho de Compras / Chip -->
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Consultoria de Hardware</h3>
+                        <p class="text-texto-secundario">Fornecemos assessoria especializada para a compra, montagem e configuração ideal de hardware, garantindo o melhor custo-benefício e desempenho.</p>
+                    </div>
+                    
+                    <!-- Card 9: Desenvolvimento de Sites (NOVO) -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <!-- Ícone de Site/Mundo -->
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 8h10M3 12h10m10-4a9 9 0 11-18 0 9 9 0 0118 0zM12 4v16m0-4h.01M16 12l2 2 2-2"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Desenvolvimento de Sites</h3>
+                        <p class="text-texto-secundario">Criação de sites profissionais e modernos, com gestão completa de domínio e hospedagem. Seu projeto online, no ar em pouco tempo.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova Seção: Inovação e IA -->
+        <section id="inovacao" class="py-20 md:py-28 bg-fundo-principal/70 border-t border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16 text-texto-claro">Inovação e Otimização de Fluxos com IA</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-left">
+                        <p class="text-2xl font-light text-texto-secundario mb-6">
+                            A Paiva Soluções Tecnológicas orienta sua empresa na <strong>integração estratégica de Inteligência Artificial</strong> para transformar a eficiência operacional.
+                        </p>
+                        <p class="text-lg text-texto-secundario mb-8">
+                            Nossa consultoria foca em implementar soluções de IA que reduzem custos, aumentam a velocidade das operações e fortalecem a segurança, com foco total na sua produtividade.
+                        </p>
+                        <a href="#contato" class="inline-block text-acento font-bold hover:text-sky-300 transition duration-300">
+                            Fale com um Consultor de IA &rarr;
+                        </a>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Dica 1: Automação Inteligente -->
+                        <div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
+                            <!-- Ícone de Automação/Engrenagem -->
+                            <svg class="w-8 h-8 text-acento mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Automação Inteligente de Tarefas</h4>
+                                <p class="text-texto-secundario text-base">Utilize IA para automatizar a classificação de tickets, processamento de faturas e gestão de inventário, liberando sua equipe para o foco estratégico.</p>
+                            </div>
+                        </div>
+
+                        <!-- Dica 2: Suporte Preditivo -->
+                        <div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
+                            <!-- Ícone de Velocidade/Vantagem -->
+                            <svg class="w-8 h-8 text-acento mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-1">Manutenção Preditiva na Infra</h4>
+                                <p class="text-texto-secundario text-base">Implemente modelos de machine learning que analisam dados de rede e hardware para prever e corrigir falhas antes que causem interrupções no serviço.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fim da Nova Seção: Inovação e IA -->
+
+        <!-- Seção Call to Action (Contato) -->
+        <section id="contato" class="py-20 md:py-28">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-cartao p-10 rounded-xl shadow-2xl border border-neutral-700">
+                <h2 class="text-3xl sm:text-4xl font-bold text-texto-claro mb-4">Sua Consultoria Gratuita: Soluções Focadas no Cliente.</h2>
+                <p class="text-lg text-texto-secundario mb-8">
+                    Não deixe a tecnologia ser um obstáculo. Nossa equipe está pronta para desenhar a **solução ideal para as suas necessidades exclusivas** de TI e segurança.
+                </p>
+                <a href="mailto:contato@paivasolucoes.com" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-12 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-xl">
+                    Solicite sua Consultoria Gratuita
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cartao border-t border-neutral-700 mt-12 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-6">
+                
+                <div>
+                    <h4 class="text-xl font-bold text-acento mb-3">Paiva Soluções Tecnológicas</h4>
+                    <p class="text-texto-secundario">Transformando tecnologia em vantagem competitiva para o seu negócio.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-texto-claro mb-3">Contato</h4>
+                    <p class="text-texto-secundario">Email: contato@paivasolucoes.com</p>
+                    <p class="text-texto-secundario">Telefone: (00) 98765-4321</p>
+                    <p class="text-texto-secundario">Localização: Cidade de Exemplo, Brasil</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-texto-claro mb-3">Navegação</h4>
+                    <ul>
+                        <li><a href="#servicos" class="text-texto-secundario hover:text-acento">Nossos Serviços</a></li>
+                        <li><a href="#inovacao" class="text-texto-secundario hover:text-acento">IA & Otimização</a></li>
+                        <li><a href="#contato" class="text-texto-secundario hover:text-acento">Fale Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center pt-8 border-t border-neutral-800 text-texto-secundario">
+                &copy; 2024 Paiva Soluções Tecnológicas. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
