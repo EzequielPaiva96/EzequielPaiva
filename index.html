@@ -51,19 +51,34 @@
             <div class="text-2xl font-extrabold tracking-tight text-acento">
                 Paiva <span class="text-texto-claro">Soluções Tecnológicas</span>
             </div>
+            
+            <!-- Links de Navegação (Desktop) -->
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#servicos" class="hover:text-acento transition duration-300">Serviços</a>
-                <a href="#inovacao" class="hover:text-acento transition duration-300">IA & Otimização</a> <!-- NOVO LINK -->
+                <a href="#inovacao" class="hover:text-acento transition duration-300">IA & Otimização</a>
                 <a href="#contato" class="hover:text-acento transition duration-300">Contato</a>
             </div>
+            
+            <!-- Botão CTA (Desktop) -->
             <a href="#contato" class="hidden md:block bg-acento text-fundo-principal font-bold py-2 px-4 rounded-lg hover:bg-sky-300 transition duration-300 shadow-md">
                 Fale Conosco
             </a>
-            <!-- Menu Hamburguer para Mobile (simplificado) -->
-            <button class="md:hidden text-texto-claro focus:outline-none">
+            
+            <!-- Menu Hamburguer Button (Mobile) -->
+            <button id="mobile-menu-button" class="md:hidden text-texto-claro focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
+
+        <!-- Menu Dropdown (Mobile - Adicionado para funcionalidade) -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 text-center border-t border-neutral-700/50">
+            <a href="#servicos" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Serviços</a>
+            <a href="#inovacao" class="block py-2 text-texto-claro hover:text-acento transition duration-300">IA & Otimização</a>
+            <a href="#contato" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Contato</a>
+            <a href="#contato" class="block bg-acento text-fundo-principal font-bold py-2 rounded-lg hover:bg-sky-300 transition duration-300 mt-2">
+                Fale Conosco
+            </a>
+        </div>
     </header>
 
     <main>
@@ -161,12 +176,22 @@
                         <p class="text-texto-secundario">Fornecemos assessoria especializada para a compra, montagem e configuração ideal de hardware, garantindo o melhor custo-benefício e desempenho.</p>
                     </div>
                     
-                    <!-- Card 9: Desenvolvimento de Sites (NOVO) -->
+                    <!-- Card 9: Desenvolvimento de Sites -->
                     <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
-                        <!-- Ícone de Site/Mundo -->
-                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M3 8h10M3 12h10m10-4a9 9 0 11-18 0 9 9 0 0118 0zM12 4v16m0-4h.01M16 12l2 2 2-2"></path></svg>
+                        <!-- Ícone de Globo/Mundo (ATUALIZADO E SIMPLIFICADO) -->
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 12h16.5M12 3.75v16.5m-1.5-4.5a2.25 2.25 0 0 1-2.25-2.25c0-1.243.682-2.317 1.682-2.883L12 9.75l1.068-.633c1.001.566 1.682 1.64 1.682 2.883A2.25 2.25 0 0 1 12 15zM2.25 12a9.75 9.75 0 1 1 19.5 0 9.75 9.75 0 0 1-19.5 0Z"/>
+                        </svg>
                         <h3 class="text-2xl font-semibold text-texto-claro mb-3">Desenvolvimento de Sites</h3>
                         <p class="text-texto-secundario">Criação de sites profissionais e modernos, com gestão completa de domínio e hospedagem. Seu projeto online, no ar em pouco tempo.</p>
+                    </div>
+
+                    <!-- Card 10: Assessoria para ONGs (NOVO) -->
+                    <div class="bg-cartao p-8 rounded-xl shadow-2xl hover:shadow-acento/20 transition duration-500 border-t border-neutral-700">
+                        <!-- Ícone de Maleta/Suporte Corporativo -->
+                        <svg class="w-10 h-10 text-acento mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.565 23.565 0 0112 15c-3.18 0-6.162-.647-8.913-1.745M6 18c.073-.028.148-.047.222-.062M18 18c.119-.015.239-.035.358-.06M8 8a3 3 0 10-6 0v8a2 2 0 002 2h12a2 2 0 002-2v-8a3 3 0 10-6 0v4h-4V8z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-texto-claro mb-3">Assessoria para ONGs</h3>
+                        <p class="text-texto-secundario">Obtenha isenções e descontos em licenças de software essenciais (Microsoft 365, Google Workspace, Adobe) para otimizar a operação da sua organização sem fins lucrativos.</p>
                     </div>
 
                 </div>
@@ -265,5 +290,27 @@
         </div>
     </footer>
     
+    <!-- Script para funcionalidade do menu móvel (Hambúrguer) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            
+            // Função para fechar o menu
+            const closeMenu = () => {
+                menu.classList.add('hidden');
+            };
+
+            // Alterna a visibilidade do menu
+            button.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            
+            // Fecha o menu quando um link é clicado (para navegação suave)
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        });
+    </script>
 </body>
 </html>
