@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Página Não Encontrada</title>
+    <!-- Carregamento do Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração de Estilo Consistente com o Site Principal -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fundo-principal': '#18181B', // neutral-900 - Cinza muito escuro
+                        'acento': '#38BDF8', // sky-400 - Azul de destaque
+                        'texto-claro': '#F4F4F5', // neutral-50 - Texto principal
+                        'texto-secundario': '#A1A1AA', // neutral-400 - Texto de apoio
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-fundo-principal text-texto-claro min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-xl text-center bg-cartao p-10 md:p-16 rounded-xl shadow-2xl border border-neutral-700">
+        <div class="flex flex-col items-center justify-center">
+            
+            <!-- Número 404 em destaque -->
+            <h1 class="text-8xl md:text-9xl font-extrabold text-acento opacity-80 mb-4">
+                404
+            </h1>
+
+            <!-- Mensagem Principal -->
+            <h2 class="text-3xl md:text-4xl font-bold text-texto-claro mb-4">
+                Página Não Encontrada
+            </h2>
+
+            <!-- Explicação Amigável -->
+            <p class="text-lg text-texto-secundario mb-10">
+                Lamentamos, mas o endereço que você tentou acessar não existe ou foi movido.
+                Não se preocupe, a tecnologia da Paiva Soluções Tecnológicas está aqui para te ajudar a voltar.
+            </p>
+
+            <!-- Botão de Retorno à Homepage -->
+            <!-- O link aponta para "index.html" (a página principal) -->
+            <a href="index.html" class="inline-block bg-acento text-fundo-principal font-bold py-3 px-8 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-xl">
+                Voltar para a Homepage
+            </a>
+        </div>
+    </div>
+    
+</body>
+</html>
