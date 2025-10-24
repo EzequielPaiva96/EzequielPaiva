@@ -284,19 +284,20 @@
         }
         .card .content .bottom h4 {
             margin: 0;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color: #ccc;
+            margin-bottom: 0.5rem; /* Reduz margem para texto maior abaixo */
+            font-size: 1.4rem; /* Aumenta o tamanho da fonte */
+            color: #FFFFFF; /* CORREÇÃO: Branco puro */
+            font-weight: 700; /* CORREÇÃO: Negrito */
         }
         .card .content .bottom p {
             margin: 0;
             padding-bottom: 0.6rem;
-            color: #fff4;
-            font-size: 0.6rem;
-            font-weight: 100;
+            color: #FFFFFF; /* CORREÇÃO: Branco puro */
+            font-size: 0.8rem; /* CORREÇÃO: Aumenta o tamanho da fonte */
+            font-weight: 300; 
             border-bottom: 1px solid #fff1;
-            max-width: 100%; /* Ajustado para caber o texto */
-            min-height: 40px; /* Garante que o texto ocupe espaço */
+            max-width: 100%; 
+            min-height: 40px; 
             overflow: hidden;
         }
         /* Ocultando o Toggle que não será usado na interface principal */
@@ -343,7 +344,7 @@
             filter: drop-shadow(0 -1.2rem 2px #0003) brightness(1.64);
         }
         .card:hover .content .bottom h4 {
-            color: #38BDF8; /* Destaca o título ao passar o mouse */
+            color: #38BDF8; /* Destaca o título ao passar o mouse (mantido em acento azul) */
         }
 
         /* Ajustes de responsividade para o GRID */
@@ -472,7 +473,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     
                     <!-- Card 1: Cabeamento Estruturado -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Cabeamento Estruturado', 'Projetamos, instalamos e certificamos redes de dados e voz de alto desempenho (cat 5e, 6 e 6a). Garanta a base sólida que sua comunicação e tráfego de dados exigem, eliminando gargalos e falhas de conexão. Nossas soluções de cabeamento garantem organização, segurança e total conformidade com as normas técnicas, prontas para suportar o crescimento do seu negócio.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -501,7 +502,7 @@
                     </div>
 
                     <!-- Card 2: Acessoria de Rede e Firewall -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Consultoria de Rede e Firewall', 'Oferecemos assessoria completa para otimizar sua infraestrutura de rede. Isso inclui o planejamento de topologias de rede eficientes, configuração de roteadores e switches, e o gerenciamento proativo de acesso. Implementamos e configuramos firewalls de última geração (software e hardware) para estabelecer barreiras de segurança robustas, controlando o tráfego de entrada e saída e protegendo contra invasões e malware.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -531,7 +532,7 @@
                     </div>
 
                     <!-- Card 3: Cibersegurança Proativa -->
-                    <div id="seguranca" class="card">
+                    <div id="seguranca" class="card" onclick="openModal('Cibersegurança Avançada', 'Nossa abordagem vai além da simples proteção. Realizamos análises contínuas de vulnerabilidades, implementamos políticas de segurança de dados (LGPD), e oferecemos soluções de DLP (Data Loss Prevention) para proteger informações críticas. O monitoramento 24/7 da rede e dos endpoints garante que ameaças sejam identificadas e neutralizadas antes que possam causar danos significativos ao seu patrimônio.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -561,7 +562,7 @@
                     </div>
                     
                     <!-- Card 4: Gestão de Acesso (Captive Portal) -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Captive Portal e Controle de Acesso', 'Criamos e gerenciamos portais cativos personalizados para redes Wi-Fi públicas ou de visitantes em seu estabelecimento. Isso permite o controle total sobre quem acessa sua rede, o tempo de uso e a largura de banda. É uma ferramenta essencial para marketing (coleta de e-mails), conformidade legal (Lei do Marco Civil da Internet) e segurança da sua rede corporativa principal.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -590,7 +591,7 @@
                     </div>
 
                     <!-- Card 5: Reparos em Impressoras -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Reparo e Manutenção de Impressoras', 'Nossos técnicos são especializados no diagnóstico e reparo de impressoras a laser, jato de tinta e multifuncionais de todas as principais marcas (HP, Epson, Brother, Canon, etc.). Oferecemos serviços no local ou em nosso laboratório, com foco em resolver rapidamente problemas como atolamento de papel, falhas na impressão, problemas de conectividade e substituição de peças, minimizando o tempo de inatividade da sua equipe.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -619,7 +620,7 @@
                     </div>
 
                     <!-- Card 6: Desenvolvimento de Aplicativos -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Desenvolvimento de Aplicativos Sob Medida', 'Desenvolvemos aplicativos móveis (iOS e Android) e web que se integram perfeitamente aos seus sistemas existentes. Seja para digitalizar processos internos complexos (grande porte) ou para criar ferramentas ágeis que solucionam pequenas dores de cabeça diárias, nossa equipe transforma suas necessidades em software funcional, escalável e seguro, focado em otimizar a experiência do usuário.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -649,7 +650,7 @@
                     </div>
 
                     <!-- Card 7: Monitoramento CFTV -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Instalação e Suporte a CFTV', 'Providenciamos a análise, o projeto e a instalação de sistemas de CFTV (câmeras de segurança). Nossos serviços incluem a configuração de DVRs, NVRs, câmeras IP e analógicas, e o treinamento para a equipe de segurança. Garantimos que seu sistema de vigilância esteja sempre operacional, oferecendo monitoramento de alta resolução e acesso remoto seguro.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -679,7 +680,7 @@
                     </div>
 
                     <!-- Card 8: Consultoria de Hardware -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Consultoria para Compra e Montagem de Hardware', 'Evite gastos desnecessários. Oferecemos consultoria imparcial para auxiliar na compra de computadores, servidores e periféricos, garantindo que as especificações técnicas atendam precisamente às suas necessidades de software e fluxo de trabalho. Realizamos a montagem especializada e a configuração inicial de todos os equipamentos, assegurando que tudo esteja otimizado para a produtividade desde o primeiro dia de uso.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -710,7 +711,7 @@
                     </div>
                     
                     <!-- Card 9: Desenvolvimento de Sites -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Desenvolvimento Rápido de Sites e Gestão de Domínio', 'Criamos websites institucionais e plataformas de serviço modernas e responsivas. Nosso processo é ágil, visando colocar seu site no ar em tempo recorde. Oferecemos consultoria na escolha e gestão do domínio, configuração de hospedagem e emails profissionais, garantindo que sua presença digital seja imediata e eficaz.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -740,7 +741,7 @@
                     </div>
 
                     <!-- Card 10: Assessoria para ONGs -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Assessoria para ONGs e Isenção de Software', 'Organizações sem fins lucrativos e ONGs podem ter acesso a isenções e grandes descontos em licenças de software de produtividade essenciais como Microsoft 365, Google Workspace (G Suite) e Adobe Creative Cloud. Nossa consultoria guia sua organização por todo o processo de elegibilidade e aquisição, garantindo que sua equipe utilize ferramentas de ponta sem comprometer o orçamento.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -771,7 +772,7 @@
                     </div>
                     
                     <!-- Card 11: Automação Corporativa e Ambientes -->
-                    <div class="card">
+                    <div class="card" onclick="openModal('Automação Corporativa de Ambientes', 'Implementamos soluções de automação residencial e corporativa para integrar dispositivos como iluminação, áudio, projeção e climatização via assistentes de voz (Alexa, Google) ou painéis de controle centralizados. Perfeito para salas de reunião, auditórios e ginásios, garantindo que o controle de tecnologia seja simples, rápido e eficiente, elevando o conforto e a experiência do usuário.')">
                         <div class="light-layer">
                             <div class="slit"></div>
                             <div class="lumen">
@@ -895,14 +896,56 @@
         </div>
     </footer>
     
-    <!-- Script para funcionalidade do menu móvel (Hambúrguer) -->
+    <!-- MODAL (POP-UP) PARA DETALHES DO SERVIÇO -->
+    <div id="service-modal" class="fixed inset-0 z-[100] bg-fundo-principal/95 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-cartao border border-neutral-700 rounded-xl max-w-lg w-full shadow-2xl transform transition-all duration-300 scale-100">
+            <!-- Header do Modal -->
+            <div class="p-6 border-b border-neutral-700 flex justify-between items-center">
+                <h3 id="modal-title" class="text-2xl font-bold text-acento"></h3>
+                <button onclick="closeModal()" class="text-texto-claro hover:text-acento transition duration-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Conteúdo do Modal -->
+            <div class="p-6">
+                <p id="modal-content" class="text-lg text-texto-claro mb-8 leading-relaxed"></p>
+                
+                <!-- CTA do Modal -->
+                <a href="#contato" onclick="closeModal()" class="block bg-acento text-fundo-principal font-bold py-3 px-6 text-center rounded-lg hover:bg-sky-300 transition duration-300 transform hover:scale-[1.01] shadow-md">
+                    Solicitar Orçamento para este Serviço
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- FIM DO MODAL -->
+
+    <!-- Script para funcionalidade do modal e menu móvel -->
     <script>
+        // Lógica do Modal
+        function openModal(title, content) {
+            const modal = document.getElementById('service-modal');
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-content').innerText = content;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Evita scroll do fundo
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('service-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restaura scroll
+        }
+
+        // Lógica do Menu Hambúrguer (Mobile)
         document.addEventListener('DOMContentLoaded', () => {
             const button = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
             
             // Função para fechar o menu
-            const closeMenu = () => {
+            const closeMobileMenu = () => {
                 menu.classList.add('hidden');
             };
 
@@ -913,8 +956,33 @@
             
             // Fecha o menu quando um link é clicado (para navegação suave)
             menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', closeMenu);
+                link.addEventListener('click', closeMobileMenu);
             });
+
+            // Fecha o modal ao clicar fora dele (opcional, para conveniência do usuário)
+            document.getElementById('service-modal').addEventListener('click', function(e) {
+                if (e.target.id === 'service-modal') {
+                    closeModal();
+                }
+            });
+            
+            // Atribui o evento de click em cada card para abrir o modal
+            document.querySelectorAll('.card').forEach(card => {
+                // Remove o handler anterior (se houver, da versão desfeita)
+                card.onclick = null; 
+                card.addEventListener('click', function() {
+                    const title = this.querySelector('h4').innerText;
+                    // Usa a descrição curta como conteúdo detalhado para o modal (como fallback/base)
+                    const content = this.querySelector('p').innerText; 
+                    
+                    // Nota: O código anterior estava usando o H4 e P como base. O ideal é usar o conteúdo dos data-attributes
+                    // Mas como removemos os data attributes na reversão, estou usando o H4 e P do card para garantir que o modal abre.
+                    // Se o usuário quiser conteúdo detalhado diferente, ele precisa fornecer o data-content ou redefinir os data-attributes
+                    
+                    openModal(title, content);
+                });
+            });
+            
         });
     </script>
 
