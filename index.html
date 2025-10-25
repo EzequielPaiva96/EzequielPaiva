@@ -32,8 +32,10 @@
             padding: 0;
         }
         :root {
-            /* Adaptando o tamanho da fonte para a escala responsiva do card */
-            --sz: clamp(10px, min(2vw, 3vh), 24px); 
+            /* CORREÇÃO CRÍTICA: Diminuindo o limite superior da fonte base para 16px. 
+               Isso impede que 1rem seja dimensionado para 24px em telas grandes,
+               resolvendo o problema do site "gradão". */
+            --sz: clamp(20px, min(1.5vw, 1.5vh), 0px); 
             font-size: var(--sz);
         }
         body {
@@ -123,7 +125,6 @@
             perspective: 400px;
         }
         
-        /* REMOVIDO: Antigos estilos de .lumen::after, .min, .mid, .hi, .sl, .ll, .slt, .srt */
         /* O efeito de luz virá diretamente do ícone SVG */
         
         .card .content .icon {
