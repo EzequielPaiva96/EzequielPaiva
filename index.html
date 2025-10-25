@@ -35,7 +35,7 @@
             /* CORREÇÃO CRÍTICA: Diminuindo o limite superior da fonte base para 16px. 
                Isso impede que 1rem seja dimensionado para 24px em telas grandes,
                resolvendo o problema do site "gradão". */
-            --sz: clamp(20px, min(1.5vw, 1.5vh), 0px); 
+            --sz: clamp(10px, min(1.5vw, vh), 10px); 
             font-size: var(--sz);
         }
         body {
