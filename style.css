@@ -111,6 +111,7 @@ body {
 .card .content .icon {
     position: absolute;
     top: 5rem;
+    height: 5rem;
     left: 0;
     right: 0;
     margin: auto;
@@ -175,7 +176,7 @@ body {
     }
     .card .content .icon {
         top: 2rem;
-        height: 3rem;
+        height: 4rem;
     }
     .card .content .bottom {
         padding-top: 4rem;
