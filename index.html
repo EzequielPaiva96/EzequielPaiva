@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paiva Soluções Tecnológicas | Sua Parceira em Serviços de TI</title>
-    <!-- Carregamento do Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuração do Tailwind para usar Inter (ou fallback sans) e paleta neutra/cinza -->
-    <style>
+    <!-- Carregamento do Tailwind CSS via CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar Inter (ou fallback sans) e paleta neutra/cinza --><style>
         /* FONTE PERSONALIZADA Aeonik Pro Regular */
         @font-face {
             font-family: "Aeonik Pro Regular";
@@ -50,8 +48,8 @@
             box-shadow: inset 0 1.01rem 0.2rem -1rem #fff0,
                 inset 0 -1.01rem 0.2rem -1rem #0000, 0 -1.02rem 0.2rem -1rem #fff0,
                 0 1rem 0.2rem -1rem #0000, 0 0 0 1px #fff3, 0 4px 4px 0 #0004, 0 0 0 1px #333;
-            width: 18rem; /* Tamanho fixo para replicar o estilo visual */
-            height: 24rem; /* Tamanho fixo para replicar o estilo visual */
+            /* REMOVIDO width: 18rem; para permitir que o grid controle */
+            height: 24rem; /* Mantido para desktop/telas grandes */
             border-radius: 1.8rem;
             color: #fff;
             padding: 1rem;
@@ -60,6 +58,8 @@
             justify-content: end;
             transition: all 0.4s ease-in-out, translate 0.4s ease-out;
             margin: auto; /* Centraliza o card no grid */
+            /* Garante que o card ocupe o espaço disponível no grid em desktop */
+            width: 100%; 
         }
         
         .card::before {
@@ -122,152 +122,9 @@
             transform-style: preserve-3d;
             perspective: 400px;
         }
-        .card .light-layer .slit {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            width: 64%;
-            height: 1.2rem;
-            transform: rotateX(-76deg);
-            background: #121212;
-            box-shadow: 0 0 4px 0 #fff0;
-            transition: all 0.4s ease-in-out;
-        }
-        .card .light-layer .lumen {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            perspective: 400px;
-            opacity: 0;
-            transition: opacity 0.4s ease-in-out;
-        }
-        .card .light-layer .lumen .min {
-            width: 70%;
-            height: 3rem;
-            background: linear-gradient(#fff0, #fffa);
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 2.5rem;
-            margin: auto;
-            transform: rotateX(-42deg);
-            opacity: 0.4;
-        }
-        .card .light-layer .lumen .mid {
-            width: 74%;
-            height: 13rem;
-            background: linear-gradient(#fff0, #fffa);
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 10em;
-            margin: auto;
-            transform: rotateX(-42deg);
-            filter: blur(1rem);
-            opacity: 0.8;
-            border-radius: 100% 100% 0 0;
-        }
-        .card .light-layer .lumen .hi {
-            width: 50%;
-            height: 13rem;
-            background: linear-gradient(#fff0, #fffa);
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 12em;
-            margin: auto;
-            transform: rotateX(22deg);
-            filter: blur(1rem);
-            opacity: 0.6;
-            border-radius: 100% 100% 0 0;
-        }
-        .card .light-layer .darken {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            perspective: 400px;
-            transition: opacity 0.4s ease-in-out;
-            opacity: 0.5;
-        }
-        .card .light-layer .darken > * {
-            transition: opacity 0.4s ease-in-out;
-        }
-        .card .light-layer .darken .sl {
-            width: 64%;
-            height: 10rem;
-            background: linear-gradient(#000, #0000);
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 9.6em;
-            bottom: 0;
-            margin: auto;
-            filter: blur(0.2rem);
-            opacity: 0.1;
-            border-radius: 0 0 100% 100%;
-            transform: rotateX(-22deg);
-        }
-        .card .light-layer .darken .ll {
-            width: 62%;
-            height: 10rem;
-            background: linear-gradient(#000a, #0000);
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 11em;
-            bottom: 0;
-            margin: auto;
-            filter: blur(0.8rem);
-            opacity: 0.4;
-            border-radius: 0 0 100% 100%;
-            transform: rotateX(22deg);
-        }
-        .card .light-layer .darken .slt {
-            width: 0.5rem;
-            height: 4rem;
-            background: linear-gradient(#0005, #0000);
-            position: absolute;
-            left: 0;
-            right: 11.5rem;
-            top: 3.9em;
-            bottom: 0;
-            margin: auto;
-            opacity: 0.6;
-            border-radius: 0 0 100% 100%;
-            transform: skewY(42deg);
-        }
-        .card .light-layer .darken .srt {
-            width: 0.5rem;
-            height: 4rem;
-            background: linear-gradient(#0005, #0000);
-            position: absolute;
-            right: 0;
-            left: 11.5rem;
-            top: 3.9em;
-            bottom: 0;
-            margin: auto;
-            opacity: 0.6;
-            border-radius: 0 0 100% 100%;
-            transform: skewY(-42deg);
-        }
+        
+        /* REMOVIDO: Antigos estilos de .lumen::after, .min, .mid, .hi, .sl, .ll, .slt, .srt */
+        /* O efeito de luz virá diretamente do ícone SVG */
         
         .card .content .icon {
             position: absolute;
@@ -276,7 +133,8 @@
             right: 0;
             margin: auto;
             width: fit-content;
-            filter: drop-shadow(0 -1.2rem 1px transparent);
+            /* Cor do ícone inicial (já está em #acento, mantido) */
+            filter: drop-shadow(0 0 0px transparent); /* Sombra inicial transparente */
             transition: filter 0.4s ease-in-out;
         }
         .card .content .bottom {
@@ -318,41 +176,26 @@
                 0 -1.02rem 0.2rem -1rem #fffa, 0 1rem 0.2rem -1rem #000, 0 0 0 1px #fff2,
                 0 4px 4px 0 #0004, 0 0 0 1px #333;
         }
-        .card:hover .light-layer .slit {
-            background: #38BDF8; /* Trocando o brilho para a cor de acento do seu site */
-            box-shadow: 0 0 4px 0 #38BDF8;
-        }
-        .card:hover .light-layer .lumen {
-            opacity: 0.5;
-        }
-        .card:hover .light-layer .darken {
-            opacity: 0.8;
-        }
-        .card:hover .light-layer .darken .sl {
-            opacity: 0.2;
-        }
-        .card:hover .light-layer .darken .ll {
-            opacity: 1;
-        }
-        .card:hover .light-layer .darken .slt {
-            opacity: 1;
-        }
-        .card:hover .light-layer .darken .srt {
-            opacity: 1;
-        }
+        
         .card:hover .content .icon {
-            filter: drop-shadow(0 -1.2rem 2px #0003) brightness(1.64);
+            /* Brilho mais pronunciado vindo do ícone */
+            filter: drop-shadow(0 0 15px #38BDF8) brightness(1.6); /* Cor de acento e mais intenso */
         }
         .card:hover .content .bottom h4 {
             color: #38BDF8; /* Destaca o título ao passar o mouse (mantido em acento azul) */
         }
 
-        /* Ajustes de responsividade para o GRID */
+        /* AJUSTES DE RESPONSIVIDADE - GERAL E CARDS */
         @media (max-width: 1024px) {
             .card {
                 width: 100%; 
-                height: 18rem; /* Reduz altura em telas menores */
+                /* Permite que a altura seja definida pelo conteúdo, crucial para mobile */
+                height: auto; 
+                min-height: 18rem; /* Mantém uma altura mínima */
                 padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end; /* Continua alinhando o conteúdo na parte de baixo */
             }
             .card .content .icon {
                 top: 2rem;
@@ -360,9 +203,6 @@
             }
             .card .content .bottom {
                 padding-top: 4rem;
-            }
-            .card .light-layer .slit {
-                top: 2rem;
             }
         }
 
@@ -400,33 +240,28 @@
 </head>
 <body class="bg-fundo-principal text-texto-claro min-h-screen">
 
-    <!-- Header e Navegação -->
-    <header class="sticky top-0 z-50 bg-fundo-principal/90 backdrop-blur-md shadow-lg">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <!-- Header e Navegação --><header class="sticky top-0 z-50 bg-fundo-principal/90 backdrop-blur-md shadow-lg">
+        <!-- MODIFICADO: lg:px-16 --><nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-4 flex justify-between items-center">
             <div class="text-2xl font-extrabold tracking-tight text-acento">
                 Paiva <span class="text-texto-claro">Soluções Tecnológicas</span>
             </div>
             
-            <!-- Links de Navegação (Desktop) -->
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <!-- Links de Navegação (Desktop) --><div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#servicos" class="hover:text-acento transition duration-300">Serviços</a>
                 <a href="#inovacao" class="hover:text-acento transition duration-300">IA & Otimização</a>
                 <a href="#contato" class="hover:text-acento transition duration-300">Contato</a>
             </div>
             
-            <!-- Botão CTA (Desktop) -->
-            <a href="#contato" class="hidden md:block bg-acento text-fundo-principal font-bold py-2 px-4 rounded-lg hover:bg-sky-300 transition duration-300 shadow-md">
+            <!-- Botão CTA (Desktop) --><a href="#contato" class="hidden md:block bg-acento text-fundo-principal font-bold py-2 px-4 rounded-lg hover:bg-sky-300 transition duration-300 shadow-md">
                 Fale Conosco
             </a>
             
-            <!-- Menu Hamburguer Button (Mobile) -->
-            <button id="mobile-menu-button" class="md:hidden text-texto-claro focus:outline-none">
+            <!-- Menu Hamburguer Button (Mobile) --><button id="mobile-menu-button" class="md:hidden text-texto-claro focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
 
-        <!-- Menu Dropdown (Mobile - Adicionado para funcionalidade) -->
-        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 text-center border-t border-neutral-700/50">
+        <!-- Menu Dropdown (Mobile - Adicionado para funcionalidade) --><div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 text-center border-t border-neutral-700/50">
             <a href="#servicos" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Serviços</a>
             <a href="#inovacao" class="block py-2 text-texto-claro hover:text-acento transition duration-300">IA & Otimização</a>
             <a href="#contato" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Contato</a>
@@ -437,11 +272,9 @@
     </header>
 
     <main>
-        <!-- Seção Hero Principal -->
-        <section class="relative pt-24 pb-32 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <!-- Efeito sutil de brilho cinza escuro para fundo -->
-                <div class="absolute inset-0 bg-gradient-to-t from-fundo-principal to-transparent opacity-50"></div>
+        <!-- Seção Hero Principal --><section class="relative pt-24 pb-32 overflow-hidden">
+            <!-- MODIFICADO: lg:px-16 --><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-center">
+                <!-- Efeito sutil de brilho cinza escuro para fundo --><div class="absolute inset-0 bg-gradient-to-t from-fundo-principal to-transparent opacity-50"></div>
                 
                 <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
                     <span class="block text-texto-claro">Infraestrutura e</span>
@@ -453,44 +286,28 @@
                     Sua parceira estratégica na gestão completa de TI: de <strong>reparos</strong> essenciais à <strong>cibersegurança</strong> avançada e <strong>redes</strong> estruturadas.
                 </p>
 
-                <!-- ELEMENTO: ÊNFASE NA CONFIANÇA -->
-                <p class="text-lg font-extrabold text-acento mb-10">
+                <!-- ELEMENTO: ÊNFASE NA CONFIANÇA --><p class="text-lg font-extrabold text-acento mb-10">
                    A SOLUÇÃO CONFIÁVEL QUE SUA EMPRESA PRECISA
                 </p>
-                <!-- FIM DO ELEMENTO -->
-                
-                <a href="#servicos" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-10 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-xl">
+                <!-- FIM DO ELEMENTO --><a href="#servicos" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-10 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-xl">
                     Explore Nossos Serviços
                 </a>
             </div>
         </section>
 
-        <!-- Seção de Serviços - USANDO OS NOVOS CARDS 3D -->
-        <section id="servicos" class="py-20 md:py-28 bg-cartao/50 border-t border-b border-neutral-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Seção de Serviços - USANDO OS NOVOS CARDS 3D --><section id="servicos" class="py-20 md:py-28 bg-cartao/50 border-t border-b border-neutral-800">
+            <!-- MODIFICADO: lg:px-16 --><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
                 <h2 class="text-4xl font-bold text-center mb-16 text-texto-claro">O Que Oferecemos</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     
-                    <!-- Card 1: Cabeamento Estruturado -->
-                    <div class="card" onclick="openModal('Cabeamento Estruturado', 'Projetamos, instalamos e certificamos redes de dados e voz de alto desempenho (cat 5e, 6 e 6a). Garanta a base sólida que sua comunicação e tráfego de dados exigem, eliminando gargalos e falhas de conexão. Nossas soluções de cabeamento garantem organização, segurança e total conformidade com as normas técnicas, prontas para suportar o crescimento do seu negócio.')">
+                    <!-- Card 1: Cabeamento Estruturado --><div class="card" onclick="openModal('Cabeamento Estruturado', 'Projetamos, instalamos e certificamos redes de dados e voz de alto desempenho (cat 5e, 6 e 6a). Garanta a base sólida que sua comunicação e tráfego de dados exigem, eliminando gargalos e falhas de conexão. Nossas soluções de cabeamento garantem organização, segurança e total conformidade com as normas técnicas, prontas para suportar o crescimento do seu negócio.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Cabos e Conexão -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Cabos e Conexão --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.36 6.64l-1.42 1.42M19 12h2M18.36 17.36l-1.42-1.42M12 19v2M5.64 17.36l1.42-1.42M3 12h2M5.64 6.64l1.42 1.42M12 3v2M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                             </svg>
                             <div class="bottom">
@@ -501,25 +318,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 2: Acessoria de Rede e Firewall -->
-                    <div class="card" onclick="openModal('Consultoria de Rede e Firewall', 'Oferecemos assessoria completa para otimizar sua infraestrutura de rede. Isso inclui o planejamento de topologias de rede eficientes, configuração de roteadores e switches, e o gerenciamento proativo de acesso. Implementamos e configuramos firewalls de última geração (software e hardware) para estabelecer barreiras de segurança robustas, controlando o tráfego de entrada e saída e protegendo contra invasões e malware.')">
+                    <!-- Card 2: Acessoria de Rede e Firewall --><div class="card" onclick="openModal('Consultoria de Rede e Firewall', 'Oferecemos assessoria completa para otimizar sua infraestrutura de rede. Isso inclui o planejamento de topologias de rede eficientes, configuração de roteadores e switches, e o gerenciamento proativo de acesso. Implementamos e configuramos firewalls de última geração (software e hardware) para estabelecer barreiras de segurança robustas, controlando o tráfego de entrada e saída e protegendo contra invasões e malware.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Firewall/Barreira de Rede -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Firewall/Barreira de Rede --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                                 <path d="M7 14v6M17 14v6"/>
                             </svg>
@@ -531,25 +336,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 3: Cibersegurança Proativa -->
-                    <div id="seguranca" class="card" onclick="openModal('Cibersegurança Avançada', 'Nossa abordagem vai além da simples proteção. Realizamos análises contínuas de vulnerabilidades, implementamos políticas de segurança de dados (LGPD), e oferecemos soluções de DLP (Data Loss Prevention) para proteger informações críticas. O monitoramento 24/7 da rede e dos endpoints garante que ameaças sejam identificadas e neutralizadas antes que possam causar danos significativos ao seu patrimônio.')">
+                    <!-- Card 3: Cibersegurança Proativa --><div id="seguranca" class="card" onclick="openModal('Cibersegurança Avançada', 'Nossa abordagem vai além da simples proteção. Realizamos análises contínuas de vulnerabilidades, implementamos políticas de segurança de dados (LGPD), e oferecemos soluções de DLP (Data Loss Prevention) para proteger informações críticas. O monitoramento 24/7 da rede e dos endpoints garante que ameaças sejam identificadas e neutralizadas antes que possam causar danos significativos ao seu patrimônio.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Escudo e Cadeado (Segurança) -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Escudo e Cadeado (Segurança) --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                 <path d="M8 11s1-2 4-2 4 2 4 2M12 11V8"/>
                             </svg>
@@ -561,25 +354,13 @@
                         </div>
                     </div>
                     
-                    <!-- Card 4: Gestão de Acesso (Captive Portal) -->
-                    <div class="card" onclick="openModal('Captive Portal e Controle de Acesso', 'Criamos e gerenciamos portais cativos personalizados para redes Wi-Fi públicas ou de visitantes em seu estabelecimento. Isso permite o controle total sobre quem acessa sua rede, o tempo de uso e a largura de banda. É uma ferramenta essencial para marketing (coleta de e-mails), conformidade legal (Lei do Marco Civil da Internet) e segurança da sua rede corporativa principal.')">
+                    <!-- Card 4: Gestão de Acesso (Captive Portal) --><div class="card" onclick="openModal('Captive Portal e Controle de Acesso', 'Criamos e gerenciamos portais cativos personalizados para redes Wi-Fi públicas ou de visitantes em seu estabelecimento. Isso permite o controle total sobre quem acessa sua rede, o tempo de uso e a largura de banda. É uma ferramenta essencial para marketing (coleta de e-mails), conformidade legal (Lei do Marco Civil da Internet) e segurança da sua rede corporativa principal.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Porta/Acesso -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Porta/Acesso --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15 3h6v18h-6M10 21V3M7 16h6M7 8h6"/>
                             </svg>
                             <div class="bottom">
@@ -590,25 +371,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 5: Reparos em Impressoras -->
-                    <div class="card" onclick="openModal('Reparo e Manutenção de Impressoras', 'Nossos técnicos são especializados no diagnóstico e reparo de impressoras a laser, jato de tinta e multifuncionais de todas as principais marcas (HP, Epson, Brother, Canon, etc.). Oferecemos serviços no local ou em nosso laboratório, com foco em resolver rapidamente problemas como atolamento de papel, falhas na impressão, problemas de conectividade e substituição de peças, minimizando o tempo de inatividade da sua equipe.')">
+                    <!-- Card 5: Reparos em Impressoras --><div class="card" onclick="openModal('Reparo e Manutenção de Impressoras', 'Nossos técnicos são especializados no diagnóstico e reparo de impressoras a laser, jato de tinta e multifuncionais de todas as principais marcas (HP, Epson, Brother, Canon, etc.). Oferecemos serviços no local ou em nosso laboratório, com foco em resolver rapidamente problemas como atolamento de papel, falhas na impressão, problemas de conectividade e substituição de peças, minimizando o tempo de inatividade da sua equipe.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Impressora com Ferramenta -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Impressora com Ferramenta --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12M15 18v3M9 18v3M12 21h3"/>
                             </svg>
                             <div class="bottom">
@@ -619,25 +388,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 6: Desenvolvimento de Aplicativos -->
-                    <div class="card" onclick="openModal('Desenvolvimento de Aplicativos Sob Medida', 'Desenvolvemos aplicativos móveis (iOS e Android) e web que se integram perfeitamente aos seus sistemas existentes. Seja para digitalizar processos internos complexos (grande porte) ou para criar ferramentas ágeis que solucionam pequenas dores de cabeça diárias, nossa equipe transforma suas necessidades em software funcional, escalável e seguro, focado em otimizar a experiência do usuário.')">
+                    <!-- Card 6: Desenvolvimento de Aplicativos --><div class="card" onclick="openModal('Desenvolvimento de Aplicativos Sob Medida', 'Desenvolvemos aplicativos móveis (iOS e Android) e web que se integram perfeitamente aos seus sistemas existentes. Seja para digitalizar processos internos complexos (grande porte) ou para criar ferramentas ágeis que solucionam pequenas dores de cabeça diárias, nossa equipe transforma suas necessidades em software funcional, escalável e seguro, focado em otimizar a experiência do usuário.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Dispositivo com Código -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Dispositivo com Código --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/>
                                 <path d="M16 3l3 3 3-3M20 18l-3 3-3-3"/>
                             </svg>
@@ -649,25 +406,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 7: Monitoramento CFTV -->
-                    <div class="card" onclick="openModal('Instalação e Suporte a CFTV', 'Providenciamos a análise, o projeto e a instalação de sistemas de CFTV (câmeras de segurança). Nossos serviços incluem a configuração de DVRs, NVRs, câmeras IP e analógicas, e o treinamento para a equipe de segurança. Garantimos que seu sistema de vigilância esteja sempre operacional, oferecendo monitoramento de alta resolução e acesso remoto seguro.')">
+                    <!-- Card 7: Monitoramento CFTV --><div class="card" onclick="openModal('Instalação e Suporte a CFTV', 'Providenciamos a análise, o projeto e a instalação de sistemas de CFTV (câmeras de segurança). Nossos serviços incluem a configuração de DVRs, NVRs, câmeras IP e analógicas, e o treinamento para a equipe de segurança. Garantimos que seu sistema de vigilância esteja sempre operacional, oferecendo monitoramento de alta resolução e acesso remoto seguro.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- Ícone de Câmera de Vigilância -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ícone de Câmera de Vigilância --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.7 10.7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h8.7a2 2 0 0 0 2-2v-4z"/>
                                 <path d="M16 12l5 2.5V9.5L16 12z"/>
                             </svg>
@@ -679,25 +424,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 8: Consultoria de Hardware -->
-                    <div class="card" onclick="openModal('Consultoria para Compra e Montagem de Hardware', 'Evite gastos desnecessários. Oferecemos consultoria imparcial para auxiliar na compra de computadores, servidores e periféricos, garantindo que as especificações técnicas atendam precisamente às suas necessidades de software e fluxo de trabalho. Realizamos a montagem especializada e a configuração inicial de todos os equipamentos, assegurando que tudo esteja otimizado para a produtividade desde o primeiro dia de uso.')">
+                    <!-- Card 8: Consultoria de Hardware --><div class="card" onclick="openModal('Consultoria para Compra e Montagem de Hardware', 'Evite gastos desnecessários. Oferecemos consultoria imparcial para auxiliar na compra de computadores, servidores e periféricos, garantindo que as especificações técnicas atendam precisamente às suas necessidades de software e fluxo de trabalho. Realizamos a montagem especializada e a configuração inicial de todos os equipamentos, assegurando que tudo esteja otimizado para a produtividade desde o primeiro dia de uso.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Chip/Componente -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Chip/Componente --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                                 <path d="M7 13h10M7 7h10M7 17h10"/>
                                 <circle cx="12" cy="12" r="2"/>
@@ -710,25 +443,13 @@
                         </div>
                     </div>
                     
-                    <!-- Card 9: Desenvolvimento de Sites -->
-                    <div class="card" onclick="openModal('Desenvolvimento Rápido de Sites e Gestão de Domínio', 'Criamos websites institucionais e plataformas de serviço modernas e responsivas. Nosso processo é ágil, visando colocar seu site no ar em tempo recorde. Oferecemos consultoria na escolha e gestão do domínio, configuração de hospedagem e emails profissionais, garantindo que sua presença digital seja imediata e eficaz.')">
+                    <!-- Card 9: Desenvolvimento de Sites --><div class="card" onclick="openModal('Desenvolvimento Rápido de Sites e Gestão de Domínio', 'Criamos websites institucionais e plataformas de serviço modernas e responsivas. Nosso processo é ágil, visando colocar seu site no ar em tempo recorde. Oferecemos consultoria na escolha e gestão do domínio, configuração de hospedagem e emails profissionais, garantindo que sua presença digital seja imediata e eficaz.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- Ícone de Globo/Mundo (Mais flat) -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ícone de Globo/Mundo (Mais flat) --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="10"/>
                                 <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                             </svg>
@@ -740,25 +461,13 @@
                         </div>
                     </div>
 
-                    <!-- Card 10: Assessoria para ONGs -->
-                    <div class="card" onclick="openModal('Assessoria para ONGs e Isenção de Software', 'Organizações sem fins lucrativos e ONGs podem ter acesso a isenções e grandes descontos em licenças de software de produtividade essenciais como Microsoft 365, Google Workspace (G Suite) e Adobe Creative Cloud. Nossa consultoria guia sua organização por todo o processo de elegibilidade e aquisição, garantindo que sua equipe utilize ferramentas de ponta sem comprometer o orçamento.')">
+                    <!-- Card 10: Assessoria para ONGs --><div class="card" onclick="openModal('Assessoria para ONGs e Isenção de Software', 'Organizações sem fins lucrativos e ONGs podem ter acesso a isenções e grandes descontos em licenças de software de produtividade essenciais como Microsoft 365, Google Workspace (G Suite) e Adobe Creative Cloud. Nossa consultoria guia sua organização por todo o processo de elegibilidade e aquisição, garantindo que sua equipe utilize ferramentas de ponta sem comprometer o orçamento.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Mãos Dadas/Suporte Comunitário -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Mãos Dadas/Suporte Comunitário --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
                                 <path d="M12 7V17M17 12H7"/>
                                 <path d="M12 17c-2 0-3 1.5-3 3M12 17c2 0 3 1.5 3 3"/>
@@ -771,25 +480,13 @@
                         </div>
                     </div>
                     
-                    <!-- Card 11: Automação Corporativa e Ambientes -->
-                    <div class="card" onclick="openModal('Automação Corporativa de Ambientes', 'Implementamos soluções de automação residencial e corporativa para integrar dispositivos como iluminação, áudio, projeção e climatização via assistentes de voz (Alexa, Google) ou painéis de controle centralizados. Perfeito para salas de reunião, auditórios e ginásios, garantindo que o controle de tecnologia seja simples, rápido e eficiente, elevando o conforto e a experiência do usuário.')">
+                    <!-- Card 11: Automação Corporativa e Ambientes --><div class="card" onclick="openModal('Automação Corporativa de Ambientes', 'Implementamos soluções de automação residencial e corporativa para integrar dispositivos como iluminação, áudio, projeção e climatização via assistentes de voz (Alexa, Google) ou painéis de controle centralizados. Perfeito para salas de reunião, auditórios e ginásios, garantindo que o controle de tecnologia seja simples, rápido e eficiente, elevando o conforto e a experiência do usuário.')">
                         <div class="light-layer">
-                            <div class="slit"></div>
-                            <div class="lumen">
-                                <div class="min"></div>
-                                <div class="mid"></div>
-                                <div class="hi"></div>
-                            </div>
-                            <div class="darken">
-                                <div class="sl"></div>
-                                <div class="ll"></div>
-                                <div class="slt"></div>
-                                <div class="srt"></div>
-                            </div>
+                            <!-- Elementos de luz/sombra foram removidos para focar no brilho do ícone --><div class="lumen"></div>
+                            <div class="darken"></div>
                         </div>
                         <div class="content">
-                            <!-- NOVO Ícone: Casa Inteligente -->
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <!-- NOVO Ícone: Casa Inteligente --><svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                                 <path d="M9 22V12h6v10"/>
                                 <path d="M12 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
@@ -806,9 +503,8 @@
             </div>
         </section>
 
-        <!-- Nova Seção: Inovação e IA -->
-        <section id="inovacao" class="py-20 md:py-28 bg-fundo-principal/70 border-t border-b border-neutral-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Nova Seção: Inovação e IA --><section id="inovacao" class="py-20 md:py-28 bg-fundo-principal/70 border-t border-b border-neutral-800">
+            <!-- MODIFICADO: lg:px-16 --><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
                 <h2 class="text-4xl font-bold text-center mb-16 text-texto-claro">Inovação e Otimização de Fluxos com IA</h2>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -825,8 +521,7 @@
                     </div>
                     
                     <div class="space-y-6">
-                        <!-- Dica 1: Automação Inteligente (Adaptação com classes Tailwind para o estilo de bloco) -->
-                        <div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
+                        <!-- Dica 1: Automação Inteligente (Adaptação com classes Tailwind para o estilo de bloco) --><div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
                             <svg class="w-8 h-8 text-acento mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             <div>
                                 <h4 class="text-xl font-semibold mb-1">Automação Inteligente de Tarefas</h4>
@@ -834,8 +529,7 @@
                             </div>
                         </div>
 
-                        <!-- Dica 2: Suporte Preditivo (Adaptação com classes Tailwind para o estilo de bloco) -->
-                        <div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
+                        <!-- Dica 2: Suporte Preditivo (Adaptação com classes Tailwind para o estilo de bloco) --><div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
                             <svg class="w-8 h-8 text-acento mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             <div>
                                 <h4 class="text-xl font-semibold mb-1">Manutenção Preditiva na Infra</h4>
@@ -846,26 +540,22 @@
                 </div>
             </div>
         </section>
-        <!-- Fim da Nova Seção: Inovação e IA -->
-
-        <!-- Seção Call to Action (Contato) - REMOVIDO EFEITO DO CARD PARA CAIXA DE CTA -->
-        <section id="contato" class="py-20 md:py-28">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-cartao p-10 rounded-xl shadow-2xl border border-neutral-700">
+        <!-- Fim da Nova Seção: Inovação e IA --><!-- Seção Call to Action (Contato) - REMOVIDO EFEITO DO CARD PARA CAIXA DE CTA --><section id="contato" class="py-20 md:py-28">
+            <!-- MODIFICADO: lg:px-16 --><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-16 text-center bg-cartao p-10 rounded-xl shadow-2xl border border-neutral-700">
                 <h2 class="text-3xl sm:text-4xl font-bold text-texto-claro mb-4">Sua Consultoria Gratuita: Soluções Focadas no Cliente.</h2>
                 <p class="text-lg text-texto-secundario mb-8">
                     Não deixe a tecnologia ser um obstáculo. Nossa equipe está pronta para desenhar a **solução ideal para as suas necessidades exclusivas** de TI e segurança.
                 </p>
-                <a href="mailto:contato@paivasolucoes.com" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-12 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-xl">
-                    Solicite sua Consultoria Gratuita
+                <a href="mailto:contato@paivasolucoes.com" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-12 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-md">
+                    Solicitar sua Consultoria Gratuita
                 </a>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-cartao border-t border-neutral-700 mt-12 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm">
+    <!-- Footer --><footer class="bg-cartao border-t border-neutral-700 mt-12 py-10">
+        <!-- MODIFICADO: lg:px-16 --><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-sm">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-6">
                 
                 <div>
@@ -896,32 +586,25 @@
         </div>
     </footer>
     
-    <!-- MODAL (POP-UP) PARA DETALHES DO SERVIÇO -->
-    <div id="service-modal" class="fixed inset-0 z-[100] bg-fundo-principal/95 backdrop-blur-sm hidden items-center justify-center p-4">
+    <!-- MODAL (POP-UP) PARA DETALHES DO SERVIÇO --><div id="service-modal" class="fixed inset-0 z-[100] bg-fundo-principal/95 backdrop-blur-sm hidden items-center justify-center p-4">
         <div class="bg-cartao border border-neutral-700 rounded-xl max-w-lg w-full shadow-2xl transform transition-all duration-300 scale-100">
-            <!-- Header do Modal -->
-            <div class="p-6 border-b border-neutral-700 flex justify-between items-center">
+            <!-- Header do Modal --><div class="p-6 border-b border-neutral-700 flex justify-between items-center">
                 <h3 id="modal-title" class="text-2xl font-bold text-acento"></h3>
                 <button onclick="closeModal()" class="text-texto-claro hover:text-acento transition duration-200">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
             
-            <!-- Conteúdo do Modal -->
-            <div class="p-6">
+            <!-- Conteúdo do Modal --><div class="p-6">
                 <p id="modal-content" class="text-lg text-texto-claro mb-8 leading-relaxed"></p>
                 
-                <!-- CTA do Modal -->
-                <a href="#contato" onclick="closeModal()" class="block bg-acento text-fundo-principal font-bold py-3 px-6 text-center rounded-lg hover:bg-sky-300 transition duration-300 transform hover:scale-[1.01] shadow-md">
+                <!-- CTA do Modal --><a href="#contato" onclick="closeModal()" class="block bg-acento text-fundo-principal font-bold py-3 px-6 text-center rounded-lg hover:bg-sky-300 transition duration-300 transform hover:scale-[1.01] shadow-md">
                     Solicitar Orçamento para este Serviço
                 </a>
             </div>
         </div>
     </div>
-    <!-- FIM DO MODAL -->
-
-    <!-- Script para funcionalidade do modal e menu móvel -->
-    <script>
+    <!-- FIM DO MODAL --><!-- Script para funcionalidade do modal e menu móvel --><script>
         // Lógica do Modal
         function openModal(title, content) {
             const modal = document.getElementById('service-modal');
@@ -986,35 +669,27 @@
         });
     </script>
 
-    <!-- FLOATING ELEMENTS (WHATSAPP & VLIBRAS) -->
-
-    <!-- Botão Flutuante do WhatsApp -->
-    <a 
+    <!-- FLOATING ELEMENTS (WHATSAPP & VLIBRAS) --><!-- Botão Flutuante do WhatsApp --><a 
         href="https://wa.me/5500987654321?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20TI%20da%20Paiva%20Solu%C3%A7%C3%B5es."
         target="_blank"
         rel="noopener noreferrer"
         class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-[#25D366] text-white shadow-xl transition duration-300 hover:scale-110 hover:shadow-green-500/50"
         title="Fale Conosco pelo WhatsApp"
     >
-        <!-- Ícone do WhatsApp (SVG) -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+        <!-- Ícone do WhatsApp (SVG) --><svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.001 2.001a10.003 10.003 0 0 0-9.92 10.826l-.587 2.146 2.228-.616a10.003 10.003 0 0 0 8.28 4.792h.001a10.003 10.003 0 0 0 9.983-9.982A10.003 10.003 0 0 0 12.001 2.001zm0 18.006a8.002 8.002 0 0 1-4.085-1.125l-.292-.174-3.004.831.84-3.045-.205-.316a8.002 8.002 0 0 1-1.22-4.248c0-4.418 3.585-8.003 8.003-8.003s8.003 3.585 8.003 8.003c0 4.418-3.585 8.003-8.003 8.003zm5.006-5.464c-.274-.137-.968-.48-.999-.51a3.541 3.541 0 0 0-.171-.122c-.14-.066-.3-.1-.458-.1-.158 0-.306.036-.453.11-.146.074-.383.18-.59.418-.205.238-.41.512-.615.749-.205.238-.41.343-.769.458-.358.114-.748.171-1.157.171a6.012 6.012 0 0 1-3.64-1.28c-.46-.382-.969-1.002-1.352-1.688-.383-.685-.41-1.365-.41-1.422 0-.063.003-.125.048-.198.045-.073.1-.19.165-.304.065-.113.129-.224.194-.336.065-.112.097-.193.114-.306.017-.113.009-.214-.04-.326-.048-.112-.303-.728-.415-1.02-.112-.292-.224-.486-.316-.68s-.194-.336-.316-.458c-.12-.123-.255-.208-.41-.295-.155-.087-.33-.131-.53-.131-.198 0-.41.057-.615.171-.205.113-.41.283-.615.454-.205.171-.375.385-.512.646-.137.261-.205.578-.205.952 0 .426.166.86.376 1.258.21.398.53.795.94 1.18.41.385.915.698 1.488.94.57.24 1.205.36 1.895.36.657 0 1.29-.114 1.898-.344.608-.23 1.117-.552 1.554-.969.438-.417.766-.975.986-1.637.22-.663.298-1.316.298-1.921-.001-.458-.152-.77-.31-.98-.158-.21-.354-.274-.59-.274-.183 0-.39.057-.615.171z"/>
         </svg>
     </a>
 
-    <!-- ELEMENTO: Vlibras para Acessibilidade -->
-    <div vw class="enabled">
+    <!-- ELEMENTO: Vlibras para Acessibilidade --><div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
             <div class="vw-plugin-top-wrapper"></div>
         </div>
     </div>
-    <!-- Script Vlibras -->
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <!-- Script Vlibras --><script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
-    <!-- FIM DOS ELEMENTOS FLUTUANTES -->
-
-</body>
+    <!-- FIM DOS ELEMENTOS FLUTUANTES --></body>
 </html>
