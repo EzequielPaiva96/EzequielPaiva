@@ -3,196 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GETy - Downloader</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>GETy - Downloader Premium</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+
     <style>
-        /* --- Configurações Gerais (Material 3 Tokens) --- */
+        /* --- Configurações --- */
         :root {
-            /* Paleta Dark Flet / Google Material */
-            --md-sys-color-background: #111111;
-            --md-sys-color-surface: #1e1e1e;
-            --md-sys-color-on-surface: #e3e3e3;
-            --md-sys-color-on-surface-variant: #c4c7c5;
+            --bg-color: #111111;
+            --surface-color: #1e1e1e;
+            --surface-hover: #2a2a2a;
             
-            /* Cores da Marca (Vermelho e Azul solicitados) */
-            --md-sys-color-primary: #ff4d4d; /* Vermelho vibrante */
-            --md-sys-color-secondary: #448aff; /* Azul vibrante */
-            --md-sys-color-primary-container: #3f100f;
-            --md-sys-color-on-primary: #ffffff;
+            --primary-color: #ff4d4d;
+            --secondary-color: #448aff;
             
-            /* Espaçamento e Bordas */
-            --md-sys-shape-corner-large: 28px;
-            --md-sys-shape-corner-full: 9999px; /* Pill shape */
+            --text-main: #e3e3e3;
+            --text-secondary: #c4c7c5;
+
+            --radius-card: 28px;
+            --radius-btn: 100px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: var(--md-sys-color-background);
-            color: var(--md-sys-color-on-surface);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             min-height: 100vh;
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 10% 20%, rgba(68, 138, 255, 0.08) 0%, transparent 40%),
-                              radial-gradient(circle at 90% 80%, rgba(255, 77, 77, 0.08) 0%, transparent 40%);
-        }
-
-        /* --- Container Principal (Card Estilo MD3) --- */
-        .container {
-            width: 100%;
-            max-width: 480px;
-            padding: 2rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        /* --- Header --- */
-        header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            overflow-x: hidden;
+            position: relative;
+            
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(68, 138, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(255, 77, 77, 0.12) 0%, transparent 45%);
+        }
+
+        /* --- Botão de Doação (Discreto) --- */
+        .btn-donate {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: var(--radius-btn);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .btn-donate:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-main);
+            transform: translateY(1px);
+        }
+
+        .btn-donate span {
+            font-size: 18px;
+            color: var(--primary-color);
+        }
+
+        /* Container Centralizado */
+        .wrapper {
+            width: 100%;
+            max-width: 1200px; 
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        /* --- Header / Hero --- */
+        header {
+            text-align: center;
+            margin-top: 3rem;
+            animation: fadeUp 0.8s ease-out;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: var(--radius-btn);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
         }
 
         h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: -0.05rem;
-            /* Efeito Gradiente Vermelho -> Azul */
-            background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+            font-size: clamp(3.5rem, 8vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 20%, var(--secondary-color) 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
         }
 
-        .badge {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--md-sys-color-on-surface-variant);
-            padding: 6px 16px;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(4px);
+        .hero-desc {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            line-height: 1.6;
         }
 
-        /* --- Main Content --- */
-        main {
-            background-color: var(--md-sys-color-surface);
-            padding: 2.5rem;
-            border-radius: var(--md-sys-shape-corner-large);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: 1.3;
-            color: var(--md-sys-color-on-surface);
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: var(--md-sys-color-on-surface-variant);
-        }
-
-        /* --- Botão Moderno (Material 3) --- */
-        .btn-download {
+        /* --- Botão Principal --- */
+        .btn-main {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            background-color: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
+            background-color: var(--primary-color);
+            color: white;
             font-size: 1.1rem;
-            font-weight: 500;
-            padding: 16px 32px;
-            border-radius: var(--md-sys-shape-corner-full);
+            font-weight: 700;
+            padding: 20px 42px;
+            border-radius: var(--radius-btn);
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-            box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
-            width: 100%;
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.25);
         }
 
-        .btn-download:hover {
-            background-color: #ff6666; /* Ligeiramente mais claro */
-            box-shadow: 0 6px 16px rgba(255, 77, 77, 0.5);
-            transform: translateY(-2px);
+        .btn-main:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255, 77, 77, 0.4);
+            background-color: #ff6666;
         }
 
-        .btn-download svg {
-            fill: currentColor;
-            width: 24px;
-            height: 24px;
+        /* --- Cards de Benefícios --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
 
-        .small-text {
-            font-size: 0.75rem;
-            opacity: 0.6;
-            margin-top: -0.5rem;
+        @media (min-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            padding: 2.5rem 1.5rem; /* Ajustado padding lateral */
+            border-radius: var(--radius-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            
+            /* Flexbox para organização */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza horizontalmente */
+            text-align: center; /* Centraliza o texto */
+            justify-content: flex-start;
+            height: 100%; /* Força altura igual no grid */
+            gap: 0.5rem; /* Gap menor, controlado por margens agora */
+            
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            background-color: var(--surface-hover);
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Ícone dentro do Card */
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem; /* Mais espaço abaixo do ícone */
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem; /* Espaço entre título e texto */
+            line-height: 1.2;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            line-height: 1.6; /* Altura de linha maior para melhor leitura */
+            font-size: 0.95rem;
+            opacity: 0.9; /* Suaviza levemente o branco */
         }
 
         /* --- Footer --- */
         footer {
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            color: #666;
+            margin-top: auto;
+            padding-bottom: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #555;
         }
 
-        /* --- Animação --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsividade para telas muito pequenas */
-        @media (max-width: 480px) {
-            h1 { font-size: 3rem; }
-            main { padding: 1.5rem; }
+        @media (max-width: 600px) {
+            .wrapper { padding: 1.5rem; }
+            h1 { font-size: 3.5rem; }
+            .card { padding: 2rem 1.5rem; }
+            .btn-donate { top: 15px; right: 15px; padding: 6px 12px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <a href="https://ezequielpaiva.com.br/doacao" target="_blank" class="btn-donate" title="Faça uma doação">
+        <span class="material-symbols-rounded">volunteer_activism</span>
+        Apoiar
+    </a>
+
+    <div class="wrapper">
+        
         <header>
+            <div class="brand-badge">
+                <span class="material-symbols-rounded" style="font-size: 18px;">check_circle</span>
+                Versão 1.0.0.0
+            </div>
+
             <h1>GETy</h1>
-            <span class="badge">Versão 1.5</span>
-        </header>
+            
+            <p class="hero-desc">
+                Simples, moderno e direto ao ponto. A ferramenta essencial para organizar seus vídeos e playlists, projetada para ser leve e prático.
+            </p>
 
-        <main>
-            <h2>Baixe vídeos de forma simples.</h2>
-            <p>Rápido, leve e com suporte a filas de downloads. Desenvolvido com ❤  para você!</p>
-
-            <a href="https://drive.google.com/uc?export=download&id=1kmh147Vchrhq6nSMC8nzBfmQm-8Pvv1h" class="btn-download" download>
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 16L7 11L8.41 9.59L11 12.17V4H13V12.17L15.59 9.59L17 11L12 16ZM6 20V18H18V20H6Z"/>
-                </svg>
+            <a href="https://drive.google.com/uc?export=download&id=1kmh147Vchrhq6nSMC8nzBfmQm-8Pvv1h" class="btn-main">
+                <span class="material-symbols-rounded">download</span>
                 Baixar para Windows
             </a>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: #666;">Compatível com Windows 10 e 11</p>
+        </header>
+
+        <section class="features-grid">
             
-            <p class="small-text">Compatível com Windows 10 e 11</p>
-        </main>
+            <div class="card">
+                <span class="material-symbols-rounded card-icon">folder_zip</span>
+                <h3>Playlists em Pastas</h3>
+                <p>Baixe playlists completas de uma vez. O GETy cria pastas automaticamente e organiza todos os arquivos.</p>
+            </div>
+
+            <div class="card">
+                <span class="material-symbols-rounded card-icon">layers</span>
+                <h3>Downloads Simultâneos</h3>
+                <p>Eficiência balanceada: baixe até 4 arquivos ao mesmo tempo com uma fila de espera de até 8 itens.</p>
+            </div>
+
+            <div class="card">
+                <span class="material-symbols-rounded card-icon">4k</span>
+                <h3>Qualidade 4K Real</h3>
+                <p>Suporte nativo para resoluções Ultra-HD, garantindo imagem cristalina em qualquer tela.</p>
+            </div>
+
+            <div class="card">
+                <span class="material-symbols-rounded card-icon">headphones</span>
+                <h3>Áudio MP3 Universal</h3>
+                <p>Extração automática de áudio em formato MP3. Compatível com som automotivo e celulares.</p>
+            </div>
+
+        </section>
 
         <footer>
-            <p>&copy; 2026 GETy Project. Todos os direitos reservados.</p>
+            &copy; 2026 GETy Project. Todos os direitos reservados.
         </footer>
+
     </div>
 
 </body>
