@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DispEmail | Automação de E-mails via Gmail API</title>
+    <title>DispEmail | Automação de E-mails Simples</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .gradient-bg { background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%); }
-        .prose h2 { color: #1e40af; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.25rem; }
-        .prose p { margin-bottom: 1rem; line-height: 1.7; }
-        .prose ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+        .step-card { transition: transform 0.2s; }
+        .step-card:hover { transform: translateY(-5px); }
+        .tag-highlight { color: #2563eb; font-weight: bold; background: #dbeafe; padding: 0 4px; border-radius: 4px; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -26,88 +26,198 @@
                 </div>
                 <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
                     <a href="#sobre" class="hover:text-blue-600 transition">Sobre</a>
-                    <a href="#seguranca" class="hover:text-blue-600 transition">Segurança</a>
+                    <a href="#passos" class="hover:text-blue-600 transition">Como Usar</a>
+                    <a href="#modelos" class="hover:text-blue-600 transition">Exemplos</a>
+                    <a href="#funcionalidades" class="hover:text-blue-600 transition">Recursos</a>
                     <a href="#privacidade" class="hover:text-blue-600 transition">Privacidade</a>
                     <a href="#termos" class="hover:text-blue-600 transition">Termos</a>
-                    <a href="#manual" class="hover:text-blue-600 transition">Manual</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="sobre" class="gradient-bg text-white py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Automação Inteligente de E-mails com Gmail</h1>
+    <header id="sobre" class="gradient-bg text-white py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Envie e-mails personalizados sem complicações</h1>
             <p class="text-xl opacity-90 mb-8 leading-relaxed">
-                O DispEmail permite que envie e-mails personalizados para listas de contactos de forma automática e segura, utilizando a infraestrutura robusta do Google.
+                O DispEmail ajuda-o a enviar mensagens diferentes para cada pessoa da sua lista, usando a sua própria conta do Gmail de forma automática e segura.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#manual" class="bg-white text-blue-700 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">Ver Manual do Usuário</a>
-                <a href="#privacidade" class="bg-blue-800 text-white px-8 py-3 rounded-full font-bold border border-blue-400 hover:bg-blue-900 transition">Termos e Privacidade</a>
-            </div>
+            <a href="#passos" class="bg-white text-blue-700 px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-xl inline-block">Aprender a Usar Agora</a>
         </div>
     </header>
 
-    <!-- Manual do Usuário (Resumo) -->
-    <section id="manual" class="py-16 px-4 bg-gray-50">
-        <div class="max-w-4xl mx-auto text-center mb-12">
-            <h2 class="text-3xl font-bold">Guia de Início Rápido</h2>
-            <p class="text-gray-600 mt-2">Siga estes passos para começar a enviar e-mails em minutos.</p>
+    <!-- Foco / Público-Alvo -->
+    <section class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">Feito com Propósito</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-6 mb-4">Focado em ONGs e Projetos Sociais</h2>
+            <p class="text-gray-600 text-lg leading-relaxed">
+                Desenvolvemos o DispEmail pensando especialmente em <strong>ONGs e Projetos</strong> que precisam se comunicar de forma rápida e inteligente. É a ferramenta ideal para gerenciar a comunicação de <strong>cursos em andamento</strong>, disparar <strong>confirmações de inscrição</strong>, aprovações em cadastro reserva e manter seus alunos sempre atualizados, economizando horas de trabalho manual da sua equipe.
+            </p>
         </div>
-        <div class="max-w-4xl mx-auto grid gap-6">
-            <div class="flex items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <div class="bg-blue-600 text-white rounded-full h-10 w-10 flex items-center justify-center font-bold mr-6">1</div>
-                <p class="font-medium italic">Faça login com sua conta Google e autorize as permissões.</p>
+    </section>
+
+    <!-- Passo a Passo Simples -->
+    <section id="passos" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 italic">"Como realizo um envio?"</h2>
+                <p class="text-gray-600 mt-2">O passo a passo oficial baseado no nosso manual:</p>
             </div>
-            <div class="flex items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <div class="bg-blue-600 text-white rounded-full h-10 w-10 flex items-center justify-center font-bold mr-6">2</div>
-                <p class="font-medium italic">Carregue a sua planilha Excel ou CSV com os contactos.</p>
-            </div>
-            <div class="flex items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <div class="bg-blue-600 text-white rounded-full h-10 w-10 flex items-center justify-center font-bold mr-6">3</div>
-                <p class="font-medium italic">Configure o modelo de e-mail e clique em "Iniciar Envio".</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Passo 1 -->
+                <div class="step-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">1</div>
+                    <h3 class="text-lg font-bold mb-3">Carregar Contatos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Clique em <strong>"Abrir Planilha"</strong> e selecione o seu Excel ou CSV. O aplicativo mostrará logo abaixo um resumo com a quantidade de contatos encontrados.
+                    </p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="step-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">2</div>
+                    <h3 class="text-lg font-bold mb-3">Projeto e Curso</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Preencha os campos <strong>"Nome do Projeto"</strong> e <strong>"Nome do Curso"</strong>. Estas informações fixas ajudam na organização e no preenchimento automático do texto.
+                    </p>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="step-card bg-white p-6 rounded-3xl shadow-sm border border-blue-200 ring-2 ring-blue-50">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">3</div>
+                    <h3 class="text-lg font-bold mb-3">Edição e Modelos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Escolha um modelo pronto (ex: "Confirmar Inscrição") ou crie um do zero. Use etiquetas como <span class="tag-highlight">{NOME}</span> para personalizar automaticamente.
+                    </p>
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="step-card bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">4</div>
+                    <h3 class="text-lg font-bold mb-3">Iniciar o Envio</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Clique no botão azul <strong>"Iniciar Envio"</strong>. Acompanhe a barra de progresso e o estado de cada mensagem em tempo real no próprio ecrã.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Transparência -->
-    <section id="seguranca" class="py-16 px-4 bg-white">
+    <!-- Exemplos Práticos de Modelos -->
+    <section id="modelos" class="py-16 px-4 bg-blue-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Exemplos de Modelos</h2>
+                <p class="text-gray-600 mt-2">Veja como utilizar as etiquetas de chaves simples:</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Exemplo 1: Confirmação de Inscrição -->
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Modelo: Confirmar Inscrição</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-blue-600">Assunto: Inscrição Confirmada - {CURSO}</h4>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 text-gray-700 text-sm italic">
+                        "Olá, <span class="tag-highlight">{NOME}</span>!<br><br>
+                        A sua inscrição no projeto <span class="tag-highlight">{PROJETO}</span> para o curso de <span class="tag-highlight">{CURSO}</span> foi realizada com sucesso.<br>
+                        Vemo-nos no dia <span class="tag-highlight">{DATA}</span>.<br><br>
+                        Atenciosamente, Coordenação."
+                    </div>
+                </div>
+
+                <!-- Exemplo 2: Cadastro Reserva -->
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Modelo: Cadastro Reserva</span>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-blue-600">Assunto: Atualização sobre a sua vaga</h4>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 text-gray-700 text-sm italic">
+                        "Prezado(a) <span class="tag-highlight">{NOME}</span>,<br><br>
+                        Informamos que o seu perfil foi selecionado para o nosso <strong>Cadastro Reserva</strong>.<br>
+                        Entraremos em contacto assim que novas vagas forem abertas para a sua turma.<br><br>
+                        Obrigado pelo interesse!"
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-8 rounded-3xl border-2 border-dashed border-gray-200">
+                <h3 class="font-bold text-xl mb-4 text-center">Dica de Ouro: As Etiquetas (Tags)</h3>
+                <p class="text-gray-600 text-center text-sm mb-6">
+                    No DispEmail, usamos <strong>apenas uma chave</strong>. Onde escrever <span class="tag-highlight">{NOME}</span>, o aplicativo trocará pelo nome da pessoa na respetiva linha da planilha.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades Adicionais (Novo) -->
+    <section id="funcionalidades" class="py-16 px-4 bg-white">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Segurança de Dados Google</h2>
+                <h2 class="text-3xl font-bold text-gray-900">Recursos do Aplicativo</h2>
                 <div class="h-1 w-20 bg-blue-500 mx-auto mt-4"></div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 shadow-sm">
-                    <div class="text-blue-600 text-3xl mb-4">🔐</div>
-                    <h3 class="text-xl font-bold mb-3">Escopo gmail.send</h3>
+                <div class="p-8 border border-gray-100 rounded-3xl bg-gray-50">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-800">Histórico e Relatórios</h3>
                     <p class="text-gray-600 leading-relaxed text-sm">
-                        Solicitamos apenas a permissão necessária para enviar mensagens em seu nome. Não temos acesso à leitura de e-mails da sua caixa de entrada.
+                        Sempre que um envio termina, pode clicar em <strong>"Histórico"</strong> para verificar o que já foi enviado, para quem foi, e identificar imediatamente caso haja algum erro de e-mail inválido.
                     </p>
                 </div>
-                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 shadow-sm">
-                    <div class="text-blue-600 text-3xl mb-4">💻</div>
-                    <h3 class="text-xl font-bold mb-3">Privacidade Local</h3>
+                <div class="p-8 border border-gray-100 rounded-3xl bg-gray-50">
+                    <div class="text-3xl mb-4">🎨</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-800">Personalização Visual</h3>
                     <p class="text-gray-600 leading-relaxed text-sm">
-                        As suas planilhas e o conteúdo dos seus disparos nunca saem do seu computador. O processamento é feito localmente para garantir total sigilo.
+                        Prefere trabalhar à noite? O DispEmail permite alternar entre o <strong>Tema Claro ou Escuro</strong> clicando no ícone de sol/lua no canto superior direito. A sua preferência fica guardada!
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Política de Privacidade -->
-    <section id="privacidade" class="py-16 px-4 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+    <!-- Transparência e Segurança -->
+    <section id="seguranca" class="py-16 px-4 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Privacidade Total</h2>
+                <div class="h-1 w-20 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 border border-gray-100 rounded-3xl bg-white shadow-sm">
+                    <div class="text-3xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-800">Os dados ficam consigo</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        O DispEmail não guarda a sua lista de contatos ou conteúdo em nenhum servidor. Tudo fica apenas no seu computador.
+                    </p>
+                </div>
+                <div class="p-8 border border-gray-100 rounded-3xl bg-white shadow-sm">
+                    <div class="text-3xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-800">Conexão Oficial</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        O login é feito diretamente pelo Google. A sua senha nunca é vista pelo aplicativo e a sua conta fica totalmente protegida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Política de Privacidade -->
+    <section id="privacidade" class="py-16 px-4 bg-white border-t border-gray-200">
+        <div class="max-w-4xl mx-auto bg-gray-50 p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
             <div class="flex items-center space-x-3 mb-8">
                 <span class="text-3xl">📄</span>
                 <h2 class="text-3xl font-bold text-gray-900">Política de Privacidade</h2>
             </div>
-            <div class="prose text-gray-700 max-w-none">
-                <p class="font-semibold italic text-gray-500 mb-6">Versão 1.0 — 14 de Março de 2026</p>
-                
+            <div class="prose text-gray-700 max-w-none text-sm">
+                <p><strong>Versão 1.0 — 14 de Março de 2026</strong></p>
+                <p>A sua privacidade é de extrema importância para nós. Esta Política de Privacidade explica como o aplicativo <strong>DispEmail</strong> coleta, utiliza e protege suas informações ao utilizar nossos serviços e a integração com o Google.</p>
+
                 <h2>1. Informações que Coletamos</h2>
                 <p>O DispEmail coleta apenas as informações estritamente necessárias para o funcionamento do serviço:</p>
                 <ul>
@@ -117,45 +227,74 @@
 
                 <h2>2. Como Utilizamos seus Dados</h2>
                 <ul>
-                    <li><strong>Autenticação e Licença:</strong> Validamos se possui uma licença ativa através do seu e-mail.</li>
-                    <li><strong>Envio de E-mails:</strong> Utilizamos o acesso via <code>gmail.send</code> para enviar mensagens conforme suas instruções.</li>
-                    <li><strong>Não Compartilhamento:</strong> Nenhum dado da sua lista ou conteúdo é enviado para nossos servidores. O processamento é 100% local.</li>
+                    <li><strong>Autenticação e Licença:</strong> Utilizamos seu e-mail para validar se você possui uma licença ativa em nosso banco de dados.</li>
+                    <li><strong>Envio de E-mails:</strong> Utilizamos seu acesso para enviar e-mails em seu nome (através do escopo <code>gmail.send</code>) conforme as instruções dadas por você no aplicativo.</li>
+                    <li><strong>Não Compartilhamento:</strong> <strong>Nenhum</strong> dado da sua lista de contatos ou conteúdo de e-mail é enviado para nossos servidores ou compartilhado com terceiros. O processamento das listas de disparo ocorre de forma 100% local no seu computador.</li>
                 </ul>
 
                 <h2>3. Uso de APIs do Google</h2>
-                <p>O uso de informações recebidas das APIs do Google pelo DispEmail obedecerá à <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-blue-600 underline">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de <strong>Uso Limitado</strong>.</p>
+                <p>O uso de informações recebidas das APIs do Google pelo DispEmail obedecerá à <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" class="text-blue-600 hover:underline">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de <strong>Uso Limitado</strong>.</p>
 
-                <h2>4. Segurança e Retenção</h2>
-                <p>Os tokens de acesso são armazenados de forma segura e criptografada no Windows Keyring. Você pode excluir todos os dados clicando em "Sair" (Logout) no aplicativo.</p>
+                <h2>4. Retenção e Exclusão de Dados</h2>
+                <ul>
+                    <li><strong>Tokens de Acesso:</strong> Os tokens de acesso são armazenados de forma segura e criptografada no seu sistema operacional (Windows Keyring). Você pode excluir todos os seus dados e tokens clicando em "Sair" (Logout) dentro do aplicativo a qualquer momento.</li>
+                    <li><strong>Histórico Local:</strong> O aplicativo mantém um registro local de envios para sua conferência. Este arquivo também pode ser excluído manualmente na pasta de dados do aplicativo (<code>%APPDATA%/DispEmail</code>).</li>
+                </ul>
+
+                <h2>5. Segurança</h2>
+                <p>Implementamos medidas de segurança padrão da indústria para proteger seus tokens e dados contra acesso não autorizado, incluindo o uso de portas dinâmicas para autenticação e servidores backend (Supabase) para proteção de chaves de API.</p>
+
+                <h2>6. Alterações nesta Política</h2>
+                <p>Podemos atualizar nossa Política de Privacidade ocasionalmente. Recomendamos que você revise esta página periodicamente para conferir quaisquer alterações.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Termos de Serviço -->
-    <section id="termos" class="py-16 px-4 bg-white border-t border-gray-200">
-        <div class="max-w-4xl mx-auto bg-gray-50 p-8 md:p-12 rounded-3xl shadow-sm border border-gray-200">
+    <!-- Termos de Serviço -->
+    <section id="termos" class="py-16 px-4 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
             <div class="flex items-center space-x-3 mb-8">
                 <span class="text-3xl">⚖️</span>
                 <h2 class="text-3xl font-bold text-gray-900">Termos de Serviço</h2>
             </div>
-            <div class="prose text-gray-700 max-w-none">
-                <p class="font-semibold italic text-gray-500 mb-6">Última atualização: 14 de Março de 2026</p>
+            <div class="prose text-gray-700 max-w-none text-sm">
+                <p><strong>Última atualização: 14 de Março de 2026</strong></p>
+                <p>Ao utilizar o aplicativo <strong>DispEmail</strong>, você concorda com os seguintes termos e condições. Leia-os atentamente.</p>
 
                 <h2>1. Aceitação dos Termos</h2>
-                <p>Ao utilizar o DispEmail, você declara que concorda com estes Termos de Serviço e com a nossa Política de Privacidade.</p>
+                <p>Ao acessar e usar este software, você declara que leu, compreendeu e concorda em estar vinculado a estes Termos de Serviço e à nossa Política de Privacidade.</p>
 
-                <h2>2. Responsabilidade pelo Conteúdo</h2>
-                <p>Você é o único responsável pelo conteúdo das mensagens enviadas. O DispEmail não monitora nem filtra as suas comunicações. Você compromete-se a cumprir as leis de combate ao spam (LGPD e CAN-SPAM Act).</p>
+                <h2>2. Uso do Serviço</h2>
+                <ul>
+                    <li><strong>Finalidade:</strong> O DispEmail é uma ferramenta para automação de envio de e-mails via Gmail API.</li>
+                    <li><strong>Responsabilidade pelo Conteúdo:</strong> Você é o único responsável pelo conteúdo das mensagens enviadas através do aplicativo. O DispEmail não monitora nem filtra o conteúdo das suas comunicações.</li>
+                    <li><strong>Conformidade com Leis de Spam:</strong> Você se compromete a utilizar o serviço em conformidade com as leis de combate ao spam (como a Lei Geral de Proteção de Dados - LGPD no Brasil e a CAN-SPAM Act nos EUA). É proibido o envio de mensagens não solicitadas de natureza comercial agressiva.</li>
+                </ul>
 
-                <h2>3. Limitação de Responsabilidade</h2>
-                <p>O software é fornecido "como está". Não nos responsabilizamos por suspensões de conta Google ou bloqueios causados pelo uso indevido da ferramenta ou ultrapassagem de quotas diárias do Google Workspace.</p>
+                <h2>3. Contas e Segurança</h2>
+                <ul>
+                    <li><strong>Integração Google:</strong> O acesso é realizado através da sua conta Google via OAuth 2.0. Nós não temos acesso à sua senha.</li>
+                    <li><strong>Responsabilidade pela Conta:</strong> Você é responsável por manter a segurança do seu computador e pelas atividades realizadas através do aplicativo.</li>
+                </ul>
 
-                <h2>4. Segurança da Conta</h2>
-                <p>O acesso é realizado via OAuth 2.0. Não temos acesso à sua senha. A segurança do computador onde o app está instalado é de sua inteira responsabilidade.</p>
+                <h2>4. Limitação de Responsabilidade</h2>
+                <ul>
+                    <li><strong>Software "Como Está":</strong> O DispEmail é fornecido "como está", sem garantias de qualquer tipo, expressas ou implícitas.</li>
+                    <li><strong>Bloqueios e Quotas:</strong> Não nos responsabilizamos por eventuais suspensões de conta Google ou bloqueios de envio causados pelo uso indevido da ferramenta ou por ultrapassar as quotas diárias de envio estabelecidas pelo Google Workspace.</li>
+                    <li><strong>Danos:</strong> Em nenhuma circunstância o desenvolvedor será responsável por quaisquer danos diretos, indiretos ou consequentes resultantes do uso ou da incapacidade de usar este software.</li>
+                </ul>
+
+                <h2>5. Licenciamento e Assinatura</h2>
+                <ul>
+                    <li>O uso continuado das funcionalidades de envio depende da manutenção de uma assinatura ativa, validada conforme as regras de negócio vigentes.</li>
+                    <li>Reservamo-nos o direito de modificar os preços ou as funcionalidades do serviço mediante aviso prévio.</li>
+                </ul>
+
+                <h2>6. Alterações nos Termos</h2>
+                <p>Reservamo-nos o direito de atualizar estes termos a qualquer momento. O uso continuado do aplicativo após tais alterações constitui sua aceitação dos novos termos.</p>
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12 px-4">
@@ -163,14 +302,14 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <h5 class="text-white font-bold mb-4">DispEmail</h5>
-                    <p class="text-sm">Solução robusta para envio de e-mails personalizados via API oficial do Google.</p>
+                    <p class="text-sm">Envio de e-mails em massa de forma simples e humana.</p>
                 </div>
                 <div>
-                    <h5 class="text-white font-bold mb-4">Acesso Rápido</h5>
+                    <h5 class="text-white font-bold mb-4">Links Úteis</h5>
                     <ul class="text-sm space-y-2">
-                        <li><a href="#privacidade" class="hover:text-white transition">Privacidade</a></li>
-                        <li><a href="#termos" class="hover:text-white transition">Termos de Uso</a></li>
-                        <li><a href="https://ezequielpaiva.com.br" class="hover:text-white transition">Suporte</a></li>
+                        <li><a href="#privacidade" class="hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#termos" class="hover:text-white transition">Termos de Serviço</a></li>
+                        <li><a href="https://ezequielpaiva.com.br" target="_blank" class="hover:text-white transition">Suporte</a></li>
                     </ul>
                 </div>
                 <div>
@@ -180,7 +319,7 @@
             </div>
             <div class="pt-8 border-t border-gray-800 text-center text-xs">
                 &copy; 2026 DispEmail. Google e Gmail são marcas da Google LLC. <br>
-                Este software não é afiliado à Google LLC.
+                Este software é uma ferramenta independente.
             </div>
         </div>
     </footer>
