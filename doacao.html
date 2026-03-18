@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doação | Ezequiel Paiva - Consultoria de TI</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <script>
@@ -12,11 +14,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'fundo-principal': '#18181B', 
-                        'cartao': '#27272A', 
+                        'fundo-principal': '#09090B', 
+                        'cartao': '#18181B', 
                         'acento': '#38BDF8', 
-                        'texto-claro': '#F4F4F5', 
+                        'texto-claro': '#FAFAFA', 
                         'texto-secundario': '#A1A1AA', 
+                    },
+                    fontFamily: {
+                        'sans': ['"Plus Jakarta Sans"', 'sans-serif'],
                     }
                 }
             }
@@ -30,62 +35,81 @@
 </head>
 <body class="bg-fundo-principal text-texto-claro min-h-screen flex flex-col">
 
-    <header class="bg-fundo-principal/90 backdrop-blur-md border-b border-neutral-800">
+    <header class="bg-fundo-principal/90 backdrop-blur-md border-b border-neutral-800 sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex flex-col text-xl font-extrabold tracking-tight text-acento">
-                <span>Ezequiel Paiva</span>
-                <span class="text-xs font-medium text-texto-claro uppercase tracking-widest">Apoio a Projetos</span>
+            <div class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-acento rounded-xl flex items-center justify-center text-fundo-principal shadow-lg">
+                    <i class="fas fa-microchip text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-texto-claro">Ezequiel Paiva</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-acento/80">Consultoria de TI</span>
+                </div>
             </div>
-            <a href="https://ezequielpaiva.com.br" class="text-texto-secundario hover:text-acento transition duration-300 text-sm">
+            <a href="index.html" class="text-texto-secundario hover:text-acento transition duration-300 text-sm font-semibold flex items-center">
                 <i class="fas fa-arrow-left mr-2"></i> Voltar ao site
             </a>
         </nav>
     </header>
 
-    <main class="flex-grow flex items-center justify-center py-12 px-4">
-        <div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <main class="flex-grow flex items-center justify-center py-12 px-4 relative overflow-hidden">
+        <!-- Background Mesh Gradient -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-acento/10 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-sky-600/5 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
-            <div class="space-y-6">
-                <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-                    Apoie esse <span class="text-acento">Projeto.</span>
+            <div class="space-y-8 animate-fade-in">
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
+                    Apoie esse <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-acento to-sky-400">Projeto Profissional.</span>
                 </h1>
-                <p class="text-texto-secundario text-lg leading-relaxed">
-                    Este projeto foi feito de ❤ para você! </p> Se ele facilitou sua vida, considere fazer uma doação de qualquer valor para ajudar a manter o projeto ativo e livre de anúncios. 
-                    <strong>Toda doação é importante, não se importe com o valor.</strong>
+                <p class="text-texto-secundario text-xl leading-relaxed">
+                    Este projeto foi desenvolvido com foco total em <span class="text-texto-claro font-semibold">qualidade e eficiência.</span> Se ele agregou valor para você, considere apoiar seu desenvolvimento contínuo.
                 </p>
                 
-                <div class="flex items-center space-x-4 text-sm text-texto-secundario">
-                    <div class="flex items-center"><i class="fas fa-shield-alt text-acento mr-2"></i> Pagamento Seguro</div>
-                    <div class="flex items-center"><i class="fas fa-bolt text-acento mr-2"></i> Processamento Instantâneo</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="flex items-center p-4 bg-cartao/40 border border-neutral-800 rounded-2xl shadow-sm">
+                        <i class="fas fa-shield-alt text-acento text-2xl mr-4"></i> 
+                        <span class="text-sm font-medium">Pagamento Seguro</span>
+                    </div>
+                    <div class="flex items-center p-4 bg-cartao/40 border border-neutral-800 rounded-2xl shadow-sm">
+                        <i class="fas fa-bolt text-acento text-2xl mr-4"></i> 
+                        <span class="text-sm font-medium">Processamento Instantâneo</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-cartao border border-neutral-700 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-acento/10 blur-3xl rounded-full"></div>
+            <div class="bg-cartao border border-neutral-700 p-10 rounded-[40px] shadow-2xl relative overflow-hidden animate-fade-in" style="animation-delay: 0.2s">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-acento/20 blur-3xl rounded-full"></div>
                 
                 <div class="relative z-10 text-center">
-                    <h2 class="text-xl font-bold mb-6 flex items-center justify-center">
-                        <i class="fa-brands fa-pix text-acento mr-2 text-2xl"></i> Doar via PIX
-                    </h2>
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="w-12 h-12 bg-acento rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-brands fa-pix text-fundo-principal text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">Doar via PIX</h2>
+                    </div>
 
-                    <div class="qr-gradient p-1 rounded-2xl inline-block mb-6 shadow-lg">
-                        <div class="bg-white p-4 rounded-xl">
+                    <div class="qr-gradient p-1.5 rounded-[32px] inline-block mb-8 shadow-2xl">
+                        <div class="bg-white p-5 rounded-[26px]">
                             <img src="https://drive.google.com/thumbnail?sz=w1000&id=1sEPZGEqRJJaOs6--_w5k55R8XoI83sP7" 
                                  alt="QR Code PIX" 
-                                 class="w-48 h-48 sm:w-56 sm:h-56">
+                                 class="w-56 h-56 sm:w-64 sm:h-64">
                         </div>
                     </div>
 
                     <div class="space-y-4">
-                        <p class="text-xs text-texto-secundario uppercase font-bold tracking-widest">Ou copie o código</p>
-                        <div class="flex items-center bg-fundo-principal border border-neutral-600 rounded-lg p-2">
+                        <p class="text-xs text-texto-secundario uppercase font-bold tracking-[0.2em]">Código PIX (Copia e Cola)</p>
+                        <div class="flex items-center bg-fundo-principal border border-neutral-700 rounded-2xl p-3 focus-within:border-acento transition-colors">
                             <input type="text" readonly value="00020126580014BR.GOV.BCB.PIX01368e3a594e-bec7-4f29-99c2-955c2e5853965204000053039865802BR5925Ezequiel Mendonca de Paiv6009SAO PAULO62140510Upa7RSz25Y630459D0" 
-                                   id="pixCode" class="bg-transparent text-xs text-texto-secundario w-full outline-none px-2 truncate">
-                            <button onclick="copyPix()" class="bg-acento text-fundo-principal font-bold px-4 py-1.5 rounded-md hover:bg-sky-300 transition text-xs">
+                                   id="pixCode" class="bg-transparent text-xs text-texto-secundario w-full outline-none px-3 truncate font-mono">
+                            <button onclick="copyPix()" class="bg-acento text-fundo-principal font-bold px-6 py-2.5 rounded-xl hover:bg-sky-300 transition-all text-xs active:scale-95 shadow-md">
                                 Copiar
                             </button>
                         </div>
-                        <span id="copyMessage" class="text-green-400 text-xs hidden">Código copiado com sucesso!</span>
+                        <div id="copyMessage" class="h-4 text-green-400 text-xs font-bold opacity-0 transition-opacity">Código copiado com sucesso!</div>
                     </div>
                 </div>
             </div>
@@ -93,9 +117,10 @@
         </div>
     </main>
 
-    <footer class="py-8 border-t border-neutral-800 text-center">
+    <footer class="py-12 border-t border-neutral-900 text-center bg-cartao/20">
         <p class="text-texto-secundario text-sm">
             &copy; 2025 Ezequiel Paiva Soluções Tecnológicas. <br class="md:hidden"> 
+            Todos os direitos reservados.
         </p>
     </footer>
 
@@ -107,8 +132,8 @@
             navigator.clipboard.writeText(copyText.value);
             
             const msg = document.getElementById("copyMessage");
-            msg.classList.remove("hidden");
-            setTimeout(() => msg.classList.add("hidden"), 3000);
+            msg.style.opacity = "1";
+            setTimeout(() => msg.style.opacity = "0", 3000);
         }
     </script>
 </body>

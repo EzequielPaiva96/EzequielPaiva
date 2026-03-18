@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezequiel Paiva | Sua Parceira em Serviços de TI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -14,11 +17,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'fundo-principal': '#18181B', 
-                        'cartao': '#27272A', 
+                        'fundo-principal': '#09090B', 
+                        'cartao': '#18181B', 
                         'acento': '#38BDF8', 
-                        'texto-claro': '#F4F4F5', 
+                        'texto-claro': '#FAFAFA', 
                         'texto-secundario': '#A1A1AA', 
+                    },
+                    fontFamily: {
+                        'sans': ['"Plus Jakarta Sans"', 'sans-serif'],
                     }
                 }
             }
@@ -29,8 +35,15 @@
 
     <header class="sticky top-0 z-50 bg-fundo-principal/90 backdrop-blur-md shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-4 flex justify-between items-center">
-<div class="flex flex-col text-2xl font-extrabold tracking-tight text-acento">
-    <span>Ezequiel Paiva</span> <span class="text-base font-medium text-texto-claro">Consultoria de TI</span> </div>
+            <div class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-acento rounded-xl flex items-center justify-center text-fundo-principal shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <i class="fas fa-microchip text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-texto-claro group-hover:text-acento transition-colors">Ezequiel Paiva</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-acento/80">Consultoria de TI</span>
+                </div>
+            </div>
             
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#servicos" class="hover:text-acento transition duration-300">Serviços</a>
@@ -58,25 +71,37 @@
     </header>
 
     <main>
-        <section class="relative pt-24 pb-32 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-center">
-                <div class="absolute inset-0 bg-gradient-to-t from-fundo-principal to-transparent opacity-50"></div>
-                
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+        <section class="relative pt-32 pb-40 overflow-hidden">
+            <!-- Background Mesh Gradient -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
+                <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-acento/20 blur-[120px] rounded-full"></div>
+                <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-sky-600/10 blur-[120px] rounded-full"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-center animate-fade-in">
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight">
                     <span class="block text-texto-claro">Infraestrutura e</span>
-                    <span class="block text-acento">Segurança de TI</span>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-acento to-sky-400">Segurança de TI</span>
                 </h1>
                 
-                <p class="mt-4 max-w-3xl mx-auto text-xl text-texto-secundario mb-4">
-                    Sua parceira estratégica na gestão completa de TI: de <strong>reparos</strong> essenciais à <strong>cibersegurança</strong> avançada e <strong>redes</strong> estruturadas.
+                <p class="mt-4 max-w-3xl mx-auto text-xl sm:text-2xl text-texto-secundario mb-12 leading-relaxed">
+                    Sua parceira estratégica na gestão completa de TI: de <span class="text-texto-claro">reparos essenciais</span> à <span class="text-texto-claro">cibersegurança avançada</span> e redes estruturadas.
                 </p>
 
-                <p class="text-lg font-extrabold text-acento mb-10">
-                    A SOLUÇÃO CONFIÁVEL QUE SUA EMPRESA PRECISA
-                </p>
-                <a href="#servicos" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-10 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-xl">
-                    Explore Nossos Serviços
-                </a>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="#servicos" class="w-full sm:w-auto bg-acento text-fundo-principal font-bold py-5 px-12 text-lg rounded-2xl hover:bg-sky-300 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+                        Explore Nossos Serviços
+                    </a>
+                    <a href="#contato" class="w-full sm:w-auto bg-transparent border border-neutral-700 text-texto-claro font-bold py-5 px-12 text-lg rounded-2xl hover:bg-neutral-800 transition-all duration-300">
+                        Fale Conosco
+                    </a>
+                </div>
+                
+                <div class="mt-20 animate-bounce">
+                    <a href="#servicos" class="text-texto-secundario hover:text-acento transition-colors">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7m14-8l-7 7-7-7"></path></svg>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -84,203 +109,137 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
                 <h2 class="text-4xl font-bold text-center mb-16 text-texto-claro">O Que Oferecemos</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <div class="card" onclick="openModal('Cabeamento Estruturado', 'Projetamos, instalamos e certificamos redes de dados e voz de alto desempenho (cat 5e, 6 e 6a). Garanta a base sólida que sua comunicação e tráfego de dados exigem, eliminando gargalos e falhas de conexão. Nossas soluções de cabeamento garantem organização, segurança e total conformidade com as normas técnicas, prontas para suportar o crescimento do seu negócio.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 1 -->
+                    <div class="card reveal" data-title="Cabeamento Estruturado" data-content="Projetamos, instalamos e certificamos redes de dados e voz de alto desempenho (cat 5e, 6 e 6a). Garanta a base sólida que sua comunicação e tráfego de dados exigem, eliminando gargalos e falhas de conexão. Nossas soluções de cabeamento garantem organização, segurança e total conformidade com as normas técnicas.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64l-1.42 1.42M19 12h2M18.36 17.36l-1.42-1.42M12 19v2M5.64 17.36l1.42-1.42M3 12h2M5.64 6.64l1.42 1.42M12 3v2M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-20 h-12 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.36 6.64l-1.42 1.42M19 12h2M18.36 17.36l-1.42-1.42M12 19v2M5.64 17.36l1.42-1.42M3 12h2M5.64 6.64l1.42 1.42M12 3v2M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Cabeamento Estruturado</h4>
-                                <p>Projetamos e instalamos redes de dados e voz de alta performance, garantindo velocidade, organização e escalabilidade para o seu negócio.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Cabeamento Estruturado</h4>
+                            <p>Redes de dados e voz de alta performance, garantindo velocidade e organização.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div class="card" onclick="openModal('Consultoria de Rede e Firewall', 'Oferecemos assessoria completa para otimizar sua infraestrutura de rede. Isso inclui o planejamento de topologias de rede eficientes, configuração de roteadores e switches, e o gerenciamento proativo de acesso. Implementamos e configuramos firewalls de última geração (software e hardware) para estabelecer barreiras de segurança robustas, controlando o tráfego de entrada e saída e protegendo contra invasões e malware.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 2 -->
+                    <div class="card reveal" data-title="Consultoria de Rede e Firewall" data-content="Oferecemos assessoria completa para otimizar sua infraestrutura de rede. Isso inclui o planejamento de topologias de rede eficientes, configuração de roteadores e switches, e o gerenciamento proativo de acesso. Implementamos firewalls de última geração para estabelecer barreiras de segurança robustas.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/><path d="M7 14v6M17 14v6"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                <path d="M7 14v6M17 14v6"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Consultoria e Firewall</h4>
-                                <p>Otimização da sua infraestrutura de rede, gerenciamento de acesso e configurações robustas de firewall para máxima performance e segurança.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Consultoria e Firewall</h4>
+                            <p>Otimização de infraestrutura, gerenciamento de acesso e segurança robusta.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div id="seguranca" class="card" onclick="openModal('Cibersegurança Avançada', 'Nossa abordagem vai além da simples proteção. Realizamos análises contínuas de vulnerabilidades, implementamos políticas de segurança de dados (LGPD), e oferecemos soluções de DLP (Data Loss Prevention) para proteger informações críticas. O monitoramento 24/7 da rede e dos endpoints garante que ameaças sejam identificadas e neutralizadas antes que possam causar danos significativos ao seu patrimônio.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 3 -->
+                    <div class="card reveal" data-title="Cibersegurança Avançada" data-content="Realizamos análises contínuas de vulnerabilidades, implementamos políticas de segurança de dados (LGPD), e oferecemos soluções de DLP (Data Loss Prevention). O monitoramento 24/7 garante que ameaças sejam identificadas e neutralizadas rapidamente.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 11s1-2 4-2 4 2 4 2M12 11V8"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                <path d="M8 11s1-2 4-2 4 2 4 2M12 11V8"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Cibersegurança Avançada</h4>
-                                <p>Defesa completa contra ameaças digitais. Análise de vulnerabilidades, políticas de segurança e monitoramento 24/7 para proteger seus dados.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Cibersegurança</h4>
+                            <p>Defesa completa contra ameaças digitais e conformidade com a LGPD.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
                     
-                    <div class="card" onclick="openModal('Captive Portal e Controle de Acesso', 'Criamos e gerenciamos portais cativos personalizados para redes Wi-Fi públicas ou de visitantes em seu estabelecimento. Isso permite o controle total sobre quem acessa sua rede, o tempo de uso e a largura de banda. É uma ferramenta essencial para marketing (coleta de e-mails), conformidade legal (Lei do Marco Civil da Internet) e segurança da sua rede corporativa principal.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 4 -->
+                    <div class="card reveal" data-title="Captive Portal e Controle" data-content="Portais cativos personalizados para redes Wi-Fi públicas ou de visitantes. Controle quem acessa sua rede, o tempo de uso e a largura de banda. Essencial para marketing e conformidade legal.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v18h-6M10 21V3M7 16h6M7 8h6"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 3h6v18h-6M10 21V3M7 16h6M7 8h6"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Captive Portal e Controle</h4>
-                                <p>Implementação de portais cativos personalizados para controle de acesso Wi-Fi, coleta de dados e conformidade legal em ambientes públicos.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Captive Portal</h4>
+                            <p>Controle de acesso Wi-Fi, coleta de dados e conformidade legal.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div class="card" onclick="openModal('Reparo e Manutenção de Impressoras', 'Nossos técnicos são especializados no diagnóstico e reparo de impressoras a laser, jato de tinta e multifuncionais de todas as principais marcas (HP, Epson, Brother, Canon, etc.). Oferecemos serviços no local ou em nosso laboratório, com foco em resolver rapidamente problemas como atolamento de papel, falhas na impressão, problemas de conectividade e substituição de peças, minimizando o tempo de inatividade da sua equipe.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 5 -->
+                    <div class="card reveal" data-title="Reparo de Impressoras" data-content="Diagnóstico e reparo especializado de impressoras de todas as principais marcas. Suporte rápido para atolamentos, falhas de impressão e substituição de peças.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12M15 18v3M9 18v3M12 21h3"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12M15 18v3M9 18v3M12 21h3"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Reparo de Impressoras</h4>
-                                <p>Suporte técnico rápido e eficiente para impressoras de todas as marcas e modelos, minimizando o tempo de inatividade e garantindo a produtividade.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Reparo de Impressoras</h4>
+                            <p>Suporte técnico ágil para manter sua produtividade em dia.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div class="card" onclick="openModal('Desenvolvimento de Aplicativos Sob Medida', 'Desenvolvemos aplicativos móveis (iOS e Android) e web que se integram perfeitamente aos seus sistemas existentes. Seja para digitalizar processos internos complexos (grande porte) ou para criar ferramentas ágeis que solucionam pequenas dores de cabeça diárias, nossa equipe transforma suas necessidades em software funcional, escalável e seguro, focado em otimizar a experiência do usuário.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 6 -->
+                    <div class="card reveal" data-title="Desenvolvimento Sob Medida" data-content="Desenvolvemos aplicativos móveis (iOS e Android) e sistemas web personalizados. Foco em digitalizar processos internos e criar ferramentas ágeis e seguras.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/><path d="M16 3l3 3 3-3M20 18l-3 3-3-3"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 5H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/>
-                                <path d="M16 3l3 3 3-3M20 18l-3 3-3-3"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Desenvolvimento de Aplicativos</h4>
-                                <p>Criação de soluções de software personalizadas, desde aplicativos corporativos de grande porte até ferramentas que otimizam tarefas diárias.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Desenvolvimento</h4>
+                            <p>Soluções de software personalizadas para o seu modelo de negócio.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div class="card" onclick="openModal('Instalação e Suporte a CFTV', 'Providenciamos a análise, o projeto e a instalação de sistemas de CFTV (câmeras de segurança). Nossos serviços incluem a configuração de DVRs, NVRs, câmeras IP e analógicas, e o treinamento para a equipe de segurança. Garantimos que seu sistema de vigilância esteja sempre operacional, oferecendo monitoramento de alta resolução e acesso remoto seguro.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 7 -->
+                    <div class="card reveal" data-title="Monitoramento CFTV" data-content="Providenciamos a análise, o projeto e a instalação de sistemas de CFTV (câmeras de segurança). Configuração de DVRs, NVRs e acesso remoto seguro.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 10.7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h8.7a2 2 0 0 0 2-2v-4z"/><path d="M16 12l5 2.5V9.5L16 12z"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.7 10.7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h8.7a2 2 0 0 0 2-2v-4z"/>
-                                <path d="M16 12l5 2.5V9.5L16 12z"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Monitoramento CFTV</h4>
-                                <p>Instalação, configuração e manutenção de sistemas de Circuito Fechado de Televisão (CFTV) para vigilância e segurança patrimonial.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Monitoramento CFTV</h4>
+                            <p>Instalação e manutenção de sistemas de vigilância e segurança patrimonial.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div class="card" onclick="openModal('Consultoria para Compra e Montagem de Hardware', 'Evite gastos desnecessários. Oferecemos consultoria imparcial para auxiliar na compra de computadores, servidores e periféricos, garantindo que as especificações técnicas atendam precisamente às suas necessidades de software e fluxo de trabalho. Realizamos a montagem especializada e a configuração inicial de todos os equipamentos, assegurando que tudo esteja otimizado para a produtividade desde o primeiro dia de uso.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 8 -->
+                    <div class="card reveal" data-title="Consultoria de Hardware" data-content="Assessoria especializada para a compra, montagem e configuração ideal de hardware, garantindo o melhor custo-benefício e desempenho.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M7 13h10M7 7h10M7 17h10"/><circle cx="12" cy="12" r="2"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                <path d="M7 13h10M7 7h10M7 17h10"/>
-                                <circle cx="12" cy="12" r="2"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Consultoria de Hardware</h4>
-                                <p>Fornecemos assessoria especializada para a compra, montagem e configuração ideal de hardware, garantindo o melhor custo-benefício e desempenho.</p>
-                                <div class="toggle"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card" onclick="openModal('Desenvolvimento Rápido de Sites e Gestão de Domínio', 'Criamos websites institucionais e plataformas de serviço modernas e responsivas. Nosso processo é ágil, visando colocar seu site no ar em tempo recorde. Oferecemos consultoria na escolha e gestão do domínio, configuração de hospedagem e emails profissionais, garantindo que sua presença digital seja imediata e eficaz.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
-                        </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Desenvolvimento de Sites</h4>
-                                <p>Criação de sites profissionais e modernos, com gestão completa de domínio e hospedagem. Seu projeto online, no ar em pouco tempo.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Consultoria de Hardware</h4>
+                            <p>Evite gastos desnecessários com hardware mal dimensionado.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div class="card" onclick="openModal('Assessoria para ONGs e Isenção de Software', 'Organizações sem fins lucrativos e ONGs podem ter acesso a isenções e grandes descontos em licenças de software de produtividade essenciais como Microsoft 365, Google Workspace (G Suite) e Adobe Creative Cloud. Nossa consultoria guia sua organização por todo o processo de elegibilidade e aquisição, garantindo que sua equipe utilize ferramentas de ponta sem comprometer o orçamento.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 9 -->
+                    <div class="card reveal" data-title="Desenvolvimento de Sites" data-content="Criação de websites institucionais modernos e responsivos com gestão completa de domínio e hospedagem. Seu projeto online em tempo recorde.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
-                                <path d="M12 7V17M17 12H7"/>
-                                <path d="M12 17c-2 0-3 1.5-3 3M12 17c2 0 3 1.5 3 3"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Assessoria para ONGs</h4>
-                                <p>Obtenha isenções e descontos em licenças de software essenciais (Microsoft 365, Google Workspace, Adobe) para otimizar a operação da sua organização sem fins lucrativos.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Desenvolvimento de Sites</h4>
+                            <p>Presença digital imediata e eficaz com sites modernos e otimizados.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
-                    <div class="card" onclick="openModal('Automação Corporativa de Ambientes', 'Implementamos soluções de automação residencial e corporativa para integrar dispositivos como iluminação, áudio, projeção e climatização via assistentes de voz (Alexa, Google) ou painéis de controle centralizados. Perfeito para salas de reunião, auditórios e ginásios, garantindo que o controle de tecnologia seja simples, rápido e eficiente, elevando o conforto e a experiência do usuário.')">
-                        <div class="light-layer">
-                            <div class="lumen"></div>
-                            <div class="darken"></div>
+                    <!-- Card 10 -->
+                    <div class="card reveal" data-title="Assessoria para ONGs" data-content="Consultoria para obtenção de isenções e descontos em softwares essenciais (Microsoft 365, Google Workspace, Adobe) para organizações sem fins lucrativos.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 7V17M17 12H7"/><path d="M12 17c-2 0-3 1.5-3 3M12 17c2 0 3 1.5 3 3"/></svg>
                         </div>
-                        <div class="content">
-                            <svg class="icon w-10 h-10 text-acento mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <path d="M9 22V12h6v10"/>
-                                <path d="M12 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                            </svg>
-                            <div class="bottom">
-                                <h4>Automação Corporativa</h4>
-                                <p>Configuração e integração de automações inteligentes (Alexa, Google Home) em salas de reunião, ginásios e ambientes corporativos para eficiência e conforto.</p>
-                                <div class="toggle"></div>
-                            </div>
+                        <div>
+                            <h4>Assessoria para ONGs</h4>
+                            <p>Otimize sua operação com isenções de software para o terceiro setor.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 11 -->
+                    <div class="card reveal" data-title="Automação Corporativa" data-content="Integração de dispositivos de iluminação, áudio e climatização via assistentes de voz ou painéis centralizados. Ideal para salas de reunião e auditórios.">
+                        <div class="icon-wrapper">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M12 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Automação Corporativa</h4>
+                            <p>Tecnologia simples, rápida e eficiente para ambientes inteligentes.</p>
+                            <div class="arrow-link">Ver detalhes <i class="fas fa-arrow-right ml-2 text-sm"></i></div>
                         </div>
                     </div>
 
@@ -288,52 +247,71 @@
             </div>
         </section>
 
-        <section id="inovacao" class="py-20 md:py-28 bg-fundo-principal/70 border-t border-b border-neutral-800">
+        <section id="inovacao" class="py-32 bg-cartao/30 border-t border-b border-neutral-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
-                <h2 class="text-4xl font-bold text-center mb-16 text-texto-claro">Inovação e Otimização de Fluxos com IA</h2>
+                <div class="text-center mb-20 reveal">
+                    <h2 class="text-4xl sm:text-6xl font-bold text-texto-claro mb-6">Inovação com IA</h2>
+                    <p class="text-xl text-texto-secundario max-w-3xl mx-auto">Transforme a eficiência operacional da sua empresa com a integração estratégica de Inteligência Artificial.</p>
+                </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="text-left">
-                        <p class="text-2xl font-light text-texto-secundario mb-6">
-                            Soluções Tecnológicas orientadas para sua empresa na <strong>integração estratégica de Inteligência Artificial</strong> para transformar a eficiência operacional.
-                        </p>
-                        <p class="text-lg text-texto-secundario mb-8">
-                            Nossa consultoria foca em implementar soluções de IA que reduzem custos, aumentam a velocidade das operações e fortalecem a segurança, com foco total na sua produtividade.
-                        </p>
-                        <a href="#contato" class="inline-block text-acento font-bold hover:text-sky-300 transition duration-300">
-                            Saiba mais &rarr;
-                        </a>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
-                            <svg class="w-8 h-8 text-acento mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-1">Automação Inteligente de Tarefas</h4>
-                                <p class="text-texto-secundario text-base">Uso de IA para ir além da automação simples. O sistema lê e extrai dados de documentos não estruturados (contratos, notas fiscais, pedidos de compra em diferentes formatos), validando as informações automaticamente, por exemplo, em processos de auditoria e compliance.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <div class="space-y-8">
+                            <div class="p-8 bg-cartao border border-neutral-700 rounded-[32px] hover:border-acento/50 transition-all duration-300 shadow-xl group">
+                                <div class="flex items-center mb-6">
+                                    <div class="p-4 bg-acento/10 rounded-2xl mr-5 group-hover:bg-acento group-hover:text-fundo-principal transition-colors duration-300">
+                                        <svg class="w-7 h-7 text-acento group-hover:text-fundo-principal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    </div>
+                                    <h4 class="text-2xl font-bold text-texto-claro">Automação Inteligente</h4>
+                                </div>
+                                <p class="text-texto-secundario text-lg leading-relaxed">Extração automática de dados de documentos complexos, validando informações em tempo real para auditoria e compliance.</p>
+                            </div>
+
+                            <div class="p-8 bg-cartao border border-neutral-700 rounded-[32px] hover:border-acento/50 transition-all duration-300 shadow-xl group">
+                                <div class="flex items-center mb-6">
+                                    <div class="p-4 bg-acento/10 rounded-2xl mr-5 group-hover:bg-acento group-hover:text-fundo-principal transition-colors duration-300">
+                                        <svg class="w-7 h-7 text-acento group-hover:text-fundo-principal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                                    </div>
+                                    <h4 class="text-2xl font-bold text-texto-claro">Análise Preditiva</h4>
+                                </div>
+                                <p class="text-texto-secundario text-lg leading-relaxed">Insights estratégicos baseados em dados, identificando riscos e oportunidades antes que eles se tornem críticos.</p>
                             </div>
                         </div>
-
-                        <div class="flex items-start bg-cartao p-6 rounded-xl border-l-4 border-acento shadow-lg">
-                            <svg class="w-8 h-8 text-acento mr-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-1">Análise de Dados e Relatórios</h4>
-                                <p class="text-texto-secundario text-base">Transforma grandes volumes de dados (Big Data) em resumos executivos e tendências futuras. A IA lê relatórios complexos (financeiros, de mercado, operacionais) e destaca automaticamente os pontos críticos, os riscos emergentes ou as novas oportunidades de crescimento que exigem atenção imediata.</p>
-                            </div>
+                    </div>
+                    
+                    <div class="relative reveal">
+                        <div class="absolute -inset-10 bg-acento/20 blur-[120px] rounded-full opacity-30"></div>
+                        <div class="relative bg-neutral-900 aspect-square overflow-hidden rounded-[48px] border border-neutral-700 shadow-2xl flex items-center justify-center p-12">
+                             <div class="w-full space-y-6">
+                                <div class="h-3 w-1/2 bg-neutral-800 rounded-full animate-pulse"></div>
+                                <div class="h-3 w-3/4 bg-neutral-800 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                                <div class="py-12 px-6 bg-acento/5 border border-acento/10 rounded-3xl flex flex-col items-center justify-center text-center">
+                                    <div class="w-12 h-12 border-4 border-acento border-t-transparent rounded-full animate-spin mb-6"></div>
+                                    <span class="text-acento font-mono text-sm tracking-widest">OTIMIZANDO FLUXOS...</span>
+                                </div>
+                                <div class="h-3 w-2/3 bg-neutral-800 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                                <div class="h-3 w-full bg-neutral-800 rounded-full animate-pulse" style="animation-delay: 0.6s"></div>
+                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="contato" class="py-20 md:py-28">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-16 text-center bg-cartao p-10 rounded-xl shadow-2xl border border-neutral-700">
-                <h2 class="text-3xl sm:text-4xl font-bold text-texto-claro mb-4">Sua Consultoria Gratuita: Soluções Focadas no Cliente.</h2>
-                <p class="text-lg text-texto-secundario mb-8">
-                    Não deixe a tecnologia ser um obstáculo. Nossa equipe está pronta para desenhar <strong>ação ideal para as suas necessidades exclusivas</strong> de TI e segurança.
+        <section id="contato" class="py-24 px-4 reveal">
+            <div class="max-w-5xl mx-auto text-center bg-gradient-to-b from-cartao to-fundo-principal p-12 sm:p-20 rounded-[48px] shadow-2xl border border-neutral-700 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-acento/10 blur-[100px] -z-10"></div>
+                <h2 class="text-4xl sm:text-6xl font-extrabold text-texto-claro mb-6 leading-tight">Sua Consultoria Gratuita <br> Começa Agora.</h2>
+                <p class="text-xl text-texto-secundario mb-12 max-w-2xl mx-auto">
+                    Não deixe a tecnologia ser um obstáculo. Nossa equipe está pronta para desenhar a <span class="text-acento font-bold">estratégia ideal</span> para suas necessidades exclusivas.
                 </p>
-                <a href="mailto:contato@ezequielpaiva.com.br" class="inline-block bg-acento text-fundo-principal font-bold py-4 px-12 text-lg rounded-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105 shadow-md">
-                    Solicitar sua Consultoria Gratuita
-                </a>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="mailto:contato@ezequielpaiva.com.br" class="w-full sm:w-auto bg-acento text-fundo-principal font-bold py-5 px-12 text-lg rounded-2xl hover:bg-sky-300 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                        Solicitar Orçamento
+                    </a>
+                    <a href="https://wa.me/+5598984204274" class="w-full sm:w-auto bg-green-500/10 border border-green-500/20 text-green-500 font-bold py-5 px-12 text-lg rounded-2xl hover:bg-green-500 hover:text-white transition-all duration-300">
+                        WhatsApp Direto
+                    </a>
+                </div>
             </div>
         </section>
 
