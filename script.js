@@ -23,4 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.toggle('hidden');
         });
     }
-});
+
+    // Accessibility Functions
+    window.toggleAltoContraste = function() {
+        document.documentElement.classList.toggle('alto-contraste');
+        const isHighContrast = document.documentElement.classList.contains('alto-contraste');
+        localStorage.setItem('altoContraste', isHighContrast);
+    };
+
+    window.toggleVLibras = function() {
+        const vlibrasButton = document.querySelector('[vw-access-button]');
+        if (vlibrasButton) {
+            vlibrasButton.click();
+        }
+    };
+
+    // Load saved preferences
+    if (localStorage.getItem('altoContraste') === 'true') {
+        document.documentElement.classList.add('alto-contraste');
+    }
+});

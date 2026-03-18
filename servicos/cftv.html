@@ -32,6 +32,15 @@
 <body class="bg-fundo-principal text-texto-claro font-sans overflow-x-hidden">
 
     <header class="sticky top-0 z-50 bg-fundo-principal/90 backdrop-blur-md border-b border-neutral-800">
+        <!-- Accessibility Bar -->
+        <div class="bg-neutral-900/50 border-b border-neutral-800 py-1.5 px-4 sm:px-16 flex justify-end gap-6 text-[10px] font-bold uppercase tracking-widest">
+            <button onclick="toggleAltoContraste()" class="hover:text-acento transition-colors flex items-center gap-2">
+                <i class="fas fa-adjust"></i> Alto Contraste
+            </button>
+            <button onclick="toggleVLibras()" class="hover:text-acento transition-colors flex items-center gap-2">
+                <i class="fas fa-hands-helping"></i> V Libras
+            </button>
+        </div>
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-4 flex justify-between items-center">
             <a href="../index.html" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 bg-acento rounded-xl flex items-center justify-center text-fundo-principal shadow-lg">

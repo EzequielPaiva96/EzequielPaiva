@@ -111,9 +111,17 @@
                 <a href="#contato" class="hover:text-acento transition duration-300">Contato</a>
             </div>
             
-            <a href="#contato" class="hidden md:block bg-acento text-fundo-principal font-bold py-2 px-4 rounded-lg hover:bg-sky-300 transition duration-300 shadow-md">
-                Fale Conosco
-            </a>
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="toggleAltoContraste()" title="Alto Contraste" class="w-10 h-10 flex items-center justify-center rounded-xl bg-neutral-800 hover:bg-acento hover:text-fundo-principal transition-all duration-300 shadow-lg text-acento border border-neutral-700">
+                    <i class="fas fa-circle-half-stroke text-lg"></i>
+                </button>
+                <button onclick="toggleVLibras()" title="VLibras" class="w-10 h-10 flex items-center justify-center rounded-xl bg-neutral-800 hover:bg-acento hover:text-fundo-principal transition-all duration-300 shadow-lg text-acento border border-neutral-700">
+                    <i class="fas fa-hands-asl-interpreting text-md"></i>
+                </button>
+                <a href="#contato" class="ml-4 bg-acento text-fundo-principal font-bold py-2 px-6 rounded-xl hover:bg-sky-300 transition duration-300 shadow-md transform hover:scale-105">
+                    Fale Conosco
+                </a>
+            </div>
             
             <button id="mobile-menu-button" class="md:hidden text-texto-claro focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -124,7 +132,15 @@
             <a href="#servicos" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Serviços</a>
             <a href="#experiencia" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Resultados</a>
             <a href="#contato" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Contato</a>
-            <a href="#contato" class="block bg-acento text-fundo-principal font-bold py-2 rounded-lg hover:bg-sky-300 transition duration-300 mt-2">
+            <div class="flex justify-center gap-4 py-4 border-t border-neutral-800 mt-2">
+                <button onclick="toggleAltoContraste()" class="w-12 h-12 flex items-center justify-center rounded-xl bg-neutral-800 text-acento border border-neutral-700 shadow-lg">
+                    <i class="fas fa-circle-half-stroke text-xl"></i>
+                </button>
+                <button onclick="toggleVLibras()" class="w-12 h-12 flex items-center justify-center rounded-xl bg-neutral-800 text-acento border border-neutral-700 shadow-lg">
+                    <i class="fas fa-hands-asl-interpreting text-lg"></i>
+                </button>
+            </div>
+            <a href="#contato" class="block bg-acento text-fundo-principal font-bold py-3 rounded-xl hover:bg-sky-300 transition duration-300">
                 Fale Conosco
             </a>
         </div>

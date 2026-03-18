@@ -172,3 +172,54 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* Accessibility - High Contrast */
+.alto-contraste {
+    --fundo: #000000 !important;
+    --cartao: #000000 !important;
+    --acento: #FFFF00 !important;
+    --texto-claro: #FFFF00 !important;
+    --texto-secundario: #FFFF00 !important;
+    --borda: #FFFF00 !important;
+}
+
+.alto-contraste body {
+    background-color: #000 !important;
+    color: #FFFF00 !important;
+}
+
+.alto-contraste .card, 
+.alto-contraste header, 
+.alto-contraste footer,
+.alto-contraste section,
+.alto-contraste div:not([vw]) {
+    background-color: #000 !important;
+    border-color: #FFFF00 !important;
+    color: #FFFF00 !important;
+}
+
+.alto-contraste a, 
+.alto-contraste button, 
+.alto-contraste h1, 
+.alto-contraste h2, 
+.alto-contraste h3, 
+.alto-contraste h4,
+.alto-contraste p,
+.alto-contraste span,
+.alto-contraste i {
+    color: #FFFF00 !important;
+}
+
+.alto-contraste .bg-acento {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+}
+
+.alto-contraste .text-acento {
+    color: #FFFF00 !important;
+}
+
+/* Hide VLibras button initially */
+[vw-access-button] {
+    display: none !important;
+}
