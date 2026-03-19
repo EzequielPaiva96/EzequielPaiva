@@ -42,4 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('altoContraste') === 'true') {
         document.documentElement.classList.add('alto-contraste');
     }
+
+    // Footer Date logic
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
