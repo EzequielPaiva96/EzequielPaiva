@@ -157,23 +157,26 @@
 
     <main>
         <section class="relative pt-32 pb-40 overflow-hidden">
-            <!-- Background Mesh Gradient -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
-                <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-acento/20 blur-[120px] rounded-full"></div>
-                <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-sky-600/10 blur-[120px] rounded-full"></div>
+            <!-- Hero Banner Image with Gradient Blur -->
+            <div class="absolute inset-0 -z-10 overflow-hidden">
+                <div class="hero-banner-container w-full h-full">
+                    <img src="Assets/1.webp" alt="Background Banner" class="hero-banner-image hero-banner-sharp w-full h-full object-cover">
+                    <img src="Assets/1.webp" alt="Background Banner" class="hero-banner-image hero-banner-blurred absolute inset-0 w-full h-full object-cover">
+                    <div class="hero-banner-overlay absolute inset-0 bg-gradient-to-r from-fundo-principal via-fundo-principal/40 to-transparent"></div>
+                </div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-center animate-fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-center md:text-left animate-fade-in">
                 <h1 class="text-4xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight">
                     <span class="block text-texto-claro">Infraestrutura e</span>
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-acento to-sky-400">Segurança de TI</span>
                 </h1>
                 
-                <p class="mt-4 max-w-3xl mx-auto text-xl sm:text-2xl text-texto-secundario mb-12 leading-relaxed">
+                <p class="mt-4 max-w-3xl mx-auto md:mx-0 text-xl sm:text-2xl text-texto-secundario mb-12 leading-relaxed">
                     Sua parceira estratégica na gestão completa de TI: de <span class="text-texto-claro">reparos essenciais</span> à <span class="text-texto-claro">cibersegurança avançada</span> e redes estruturadas.
                 </p>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <div class="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-6">
                     <a href="#servicos" class="w-full sm:w-auto bg-acento text-fundo-principal font-bold py-5 px-12 text-lg rounded-2xl hover:bg-sky-300 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
                         Explore Nossos Serviços
                     </a>
