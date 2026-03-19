@@ -166,7 +166,12 @@
                 <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-sky-600/10 blur-[120px] rounded-full"></div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-left animate-fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-left animate-fade-in text-texto-claro">
+                <div id="hero-greeting" class="mb-6 block text-sm sm:text-base tracking-wide leading-relaxed" style="min-height: 3.5rem;">
+                    <span id="greeting-line-1" class="block text-acento/80 font-medium italic"></span>
+                    <span id="greeting-line-2" class="block text-texto-secundario/90 font-light"></span>
+                    <span id="greeting-cursor" class="inline-block w-0.5 h-4 bg-acento ml-0.5 align-middle animate-pulse"></span>
+                </div>
                 <h1 class="text-4xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight">
                     <span class="block text-texto-claro">Infraestrutura e</span>
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-acento to-sky-400">Segurança de TI</span>
@@ -464,6 +469,57 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script>
+        // Personalized Greeting Typewriter Effect
+        function typeText(element, text, speed, onDone) {
+            let i = 0;
+            element.textContent = '';
+            function tick() {
+                if (i < text.length) {
+                    element.textContent += text[i++];
+                    setTimeout(tick, speed);
+                } else if (onDone) {
+                    onDone();
+                }
+            }
+            tick();
+        }
+
+        function startGreetingAnimation() {
+            const line1 = document.getElementById('greeting-line-1');
+            const line2 = document.getElementById('greeting-line-2');
+            const cursor = document.getElementById('greeting-cursor');
+            if (!line1 || !line2) return;
+
+            const hour = new Date().getHours();
+            let period = '';
+            if (hour >= 5 && hour < 12) period = 'manhã';
+            else if (hour >= 12 && hour < 18) period = 'tarde';
+            else period = 'noite';
+
+            const text1 = 'Olá, seja bem vindo, tudo bem?';
+            const text2 = `O que te faz vir aqui nessa ${period}, fale com a gente.`;
+
+            // Type first line, then second
+            typeText(line1, text1, 40, () => {
+                setTimeout(() => {
+                    typeText(line2, text2, 35, () => {
+                        // Hide cursor after done
+                        setTimeout(() => {
+                            if (cursor) cursor.style.opacity = '0';
+                        }, 1200);
+                    });
+                }, 300);
+            });
+        }
+
+        // Start on page load
+        window.addEventListener('DOMContentLoaded', startGreetingAnimation);
+
+        // Footer Date logic
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
