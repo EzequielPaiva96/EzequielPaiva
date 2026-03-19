@@ -157,13 +157,19 @@
 
     <main>
         <section class="relative pt-32 pb-40 overflow-hidden">
-            <!-- Hero Banner Image with Gradient Blur -->
-            <div class="absolute inset-0 -z-10 overflow-hidden">
+            <!-- Hero Banner Image (Desktop) -->
+            <div class="absolute inset-0 -z-10 overflow-hidden hidden md:block">
                 <div class="hero-banner-container w-full h-full">
                     <img src="Assets/1.webp" alt="Background Banner" class="hero-banner-image hero-banner-sharp w-full h-full object-cover">
                     <img src="Assets/1.webp" alt="Background Banner" class="hero-banner-image hero-banner-blurred absolute inset-0 w-full h-full object-cover">
                     <div class="hero-banner-overlay absolute inset-0 bg-gradient-to-r from-fundo-principal via-fundo-principal/40 to-transparent"></div>
                 </div>
+            </div>
+
+            <!-- Bluish Mesh Gradient (Mobile) -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden md:hidden">
+                <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-acento/20 blur-[120px] rounded-full"></div>
+                <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-sky-600/10 blur-[120px] rounded-full"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 text-center md:text-left animate-fade-in">

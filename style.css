@@ -219,22 +219,6 @@ body {
     );
 }
 
-@media (max-width: 768px) {
-    .hero-banner-overlay {
-        background: linear-gradient(
-            to bottom,
-            rgba(9, 9, 11, 0.7) 0%,
-            rgba(9, 9, 11, 0.4) 50%,
-            rgba(9, 9, 11, 0.9) 100%
-        );
-    }
-    .hero-banner-blurred {
-        mask-image: none;
-        -webkit-mask-image: none;
-        opacity: 0.8;
-    }
-}
-
 /* Accessibility - High Contrast */
 .alto-contraste {
     --fundo: #000000 !important;
