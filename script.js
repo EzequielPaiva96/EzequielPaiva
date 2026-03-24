@@ -35,7 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.classList.add('alto-contraste');
     }
 
-    // Footer Date logic
-    const yearSpan = document.getElementById('current-year');
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    // A lógica de data do rodapé agora é gerenciada pelo footer.js
 });
