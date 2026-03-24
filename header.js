@@ -12,7 +12,7 @@ function initHeader() {
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-4 flex justify-between items-center">
         <!-- Logo e Título -->
         <a href="${indexLink}" class="flex items-center gap-3 group">
-            <img src="${logoPath}" alt="Logo Ezequiel Paiva" class="w-10 h-10 rounded-xl object-contain shadow-lg group-hover:rotate-12 transition-transform duration-300">
+            <img src="${logoPath}" alt="Logo Ezequiel Paiva" fetchpriority="high" loading="eager" class="w-10 h-10 rounded-xl object-contain shadow-lg group-hover:rotate-12 transition-transform duration-300">
             <div class="flex flex-col">
                 <span class="text-xl font-bold tracking-tight text-texto-claro group-hover:text-acento transition-colors">Ezequiel Paiva</span>
                 <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-acento/80">Soluções em TI</span>
