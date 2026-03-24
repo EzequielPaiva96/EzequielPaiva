@@ -54,6 +54,10 @@ function initHeader() {
         <a href="${isSubpage ? '../index.html#experiencia' : '#experiencia'}" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Resultados</a>
         <a href="${isSubpage ? '../index.html#atendimento' : '#atendimento'}" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Quem Atendemos</a>
         <a href="${isSubpage ? '../index.html#contato' : '#contato'}" class="block py-2 text-texto-claro hover:text-acento transition duration-300">Contato</a>
+        <div class="flex justify-center gap-6 py-4 border-t border-neutral-800 mt-2">
+            <a href="https://linkedin.com" target="_blank" class="hover:text-acento transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+            <a href="https://instagram.com" target="_blank" class="hover:text-acento transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+        </div>
     </div>
     `;
 
