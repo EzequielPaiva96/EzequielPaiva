@@ -213,22 +213,22 @@
                 <a href="#contato" class="hover:text-acento transition duration-300">Contato</a>
             </div>
             
-            <div class="hidden md:flex items-center gap-4">
+            <div class="flex items-center gap-2 sm:gap-4">
                 <button onclick="toggleAltoContraste()" title="Alto Contraste" class="p-2 flex items-center justify-center transition-all duration-300 text-acento hover:text-sky-300">
                     <i class="fas fa-circle-half-stroke text-lg"></i>
                 </button>
                 <button onclick="toggleVLibras()" title="VLibras" class="p-2 flex items-center justify-center transition-all duration-300 text-acento hover:text-sky-300">
                     <i class="fas fa-hands-asl-interpreting text-md"></i>
                 </button>
+                
+                <button id="mobile-menu-button" class="md:hidden flex items-center justify-center p-2 focus:outline-none">
+                    <div class="hamburger-icon" id="hamburger-icon">
+                        <div class="hamburger-line line-1"></div>
+                        <div class="hamburger-line line-2"></div>
+                        <div class="hamburger-line line-3"></div>
+                    </div>
+                </button>
             </div>
-            
-            <button id="mobile-menu-button" class="md:hidden flex items-center justify-center p-2 focus:outline-none">
-                <div class="hamburger-icon" id="hamburger-icon">
-                    <div class="hamburger-line line-1"></div>
-                    <div class="hamburger-line line-2"></div>
-                    <div class="hamburger-line line-3"></div>
-                </div>
-            </button>
         </nav>
 
         <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 opacity-0 px-4 space-y-2 text-center transition-all duration-300 ease-in-out">
