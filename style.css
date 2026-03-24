@@ -183,6 +183,18 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+@keyframes slow-zoom {
+    0% { transform: scale(1.0); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1.0); }
+}
+
+@keyframes shimmer-move {
+    0% { transform: translateX(-100%) skewX(-15deg); }
+    100% { transform: translateX(200%) skewX(-15deg); }
 }
 
 .hero-banner-image {
@@ -191,6 +203,7 @@ body {
     object-fit: cover;
     object-position: 80% center; /* Focus on the woman (right side) */
     transition: filter 0.5s ease;
+    animation: slow-zoom 20s infinite ease-in-out;
 }
 
 .hero-banner-sharp {
@@ -202,6 +215,7 @@ body {
     mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 85%);
     -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 85%);
     transform: scale(1.1); /* Prevent white edges from blur */
+    z-index: 1;
 }
 
 .hero-banner-overlay {
@@ -217,6 +231,27 @@ body {
         rgba(9, 9, 11, 0) 50%,
         rgba(9, 9, 11, 1) 100%
     );
+    z-index: 2;
+}
+
+/* Subtle line movement effect */
+.hero-line-animation {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(56, 189, 248, 0.05),
+        rgba(56, 189, 248, 0.1),
+        rgba(56, 189, 248, 0.05),
+        transparent
+    );
+    width: 50%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+    animation: shimmer-move 8s infinite linear;
+    filter: blur(20px);
 }
 
 /* Accessibility - High Contrast */
