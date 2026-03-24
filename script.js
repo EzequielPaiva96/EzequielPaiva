@@ -14,19 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', reveal);
     reveal(); // Initial check
 
-    // Mobile Menu
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuButton) {
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('menu-active');
-            if (hamburgerIcon) {
-                hamburgerIcon.classList.toggle('hamburger-active');
-            }
-        });
-    }
+    // A lógica de menu e cabeçalho agora está unificada no header.js
 
     // Accessibility Functions
     window.toggleAltoContraste = function() {
