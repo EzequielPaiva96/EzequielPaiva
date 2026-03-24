@@ -86,8 +86,8 @@ body {
 .card .icon-wrapper {
     width: 64px;
     height: 64px;
-    background: rgba(56, 189, 248, 0.1);
-    border-radius: 16px;
+    background: transparent;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +96,7 @@ body {
 }
 
 .card:hover .icon-wrapper {
-    background: var(--acento);
+    background: transparent;
     transform: scale(1.1) rotate(5deg);
 }
 
