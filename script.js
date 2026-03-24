@@ -19,8 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuButton) {
+        const hamburgerIcon = document.getElementById('hamburger-icon');
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('menu-active');
+            if (hamburgerIcon) {
+                hamburgerIcon.classList.toggle('hamburger-active');
+            }
         });
     }
 
