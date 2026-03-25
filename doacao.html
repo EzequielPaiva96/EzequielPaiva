@@ -18,51 +18,67 @@
     <link rel="apple-touch-icon" href="https://ezequielpaiva.com.br/assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'fundo-principal': '#09090B', 
-                        'cartao': '#18181B', 
-                        'acento': '#38BDF8', 
-                        'texto-claro': '#FAFAFA', 
-                        'texto-secundario': '#A1A1AA', 
+                        'fundo-principal': '#FFFFFF', 
+                        'fundo-secundario': '#F8F9FA',
+                        'cartao': '#FFFFFF', 
+                        'acento': '#1A73E8', 
+                        'texto-claro': '#1A1A1A', 
+                        'texto-secundario': '#5F6368',
+                        'borda': '#E8EAED',
                     },
                     fontFamily: {
-                        'sans': ['"Plus Jakarta Sans"', 'sans-serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
         .qr-gradient {
-            background: linear-gradient(135deg, #38BDF8 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #4285F4, #1A73E8);
         }
     </style>
 </head>
 <body class="bg-fundo-principal text-texto-claro min-h-screen flex flex-col">
 
-    <header class="bg-fundo-principal/90 backdrop-blur-md border-b border-neutral-800 fixed top-0 left-0 w-full z-50">
+    <header class="bg-white/95 backdrop-blur-md border-b border-borda fixed top-0 left-0 w-full z-50 shadow-sm">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3 group">
-                <img src="assets/logo.webp" alt="Logo Ezequiel Paiva" class="w-10 h-10 rounded-xl object-contain shadow-lg">
+                <img src="assets/logo.webp" alt="Logo Ezequiel Paiva" class="w-10 h-10 rounded-xl object-contain shadow-md">
                 <div class="flex flex-col">
                     <span class="text-xl font-bold tracking-tight text-texto-claro">Ezequiel Paiva</span>
-                    <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-acento/80">Consultoria de TI</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-texto-secundario">Consultoria de TI</span>
                 </div>
             </div>
-            <div class="flex items-center gap-4">
-                <button onclick="toggleAltoContraste()" title="Alto Contraste" class="w-10 h-10 flex items-center justify-center rounded-xl bg-neutral-800 hover:bg-acento hover:text-fundo-principal transition-all duration-300 shadow-lg text-acento border border-neutral-700">
-                    <i class="fas fa-circle-half-stroke text-lg"></i>
-                </button>
-                <button onclick="toggleVLibras()" title="VLibras" class="w-10 h-10 flex items-center justify-center rounded-xl bg-neutral-800 hover:bg-acento hover:text-fundo-principal transition-all duration-300 shadow-lg text-acento border border-neutral-700">
-                    <i class="fas fa-hands-asl-interpreting text-md"></i>
-                </button>
+            <div class="flex items-center gap-3">
                 <a href="index.html" class="text-texto-secundario hover:text-acento transition duration-300 text-sm font-semibold flex items-center gap-2">
                     <i class="fas fa-arrow-left"></i> Voltar ao site
                 </a>
@@ -71,46 +87,46 @@
     </header>
 
     <main class="flex-grow flex items-center justify-center pt-28 pb-12 px-4 relative overflow-hidden">
-        <!-- Background Mesh Gradient -->
+        <!-- Background Shapes -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 overflow-hidden">
-            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-acento/10 blur-[120px] rounded-full"></div>
-            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-sky-600/5 blur-[120px] rounded-full"></div>
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200/30 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-green-200/20 blur-[120px] rounded-full"></div>
         </div>
 
         <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
             <div class="space-y-8 animate-fade-in">
                 <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
-                    Apoie esse <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-acento to-sky-400">Projeto Profissional.</span>
+                    Apoie esse <br><span class="gradient-text">Projeto Profissional.</span>
                 </h1>
                 <p class="text-texto-secundario text-xl leading-relaxed">
                     Este projeto foi desenvolvido com foco total em <span class="text-texto-claro font-semibold">qualidade e eficiência.</span> Se ele agregou valor para você, considere apoiar seu desenvolvimento contínuo.
                 </p>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="flex items-center p-4 bg-cartao/40 border border-neutral-800 rounded-2xl shadow-sm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center p-4 bg-fundo-secundario border border-borda rounded-2xl">
                         <i class="fas fa-shield-alt text-acento text-2xl mr-4"></i> 
                         <span class="text-sm font-medium">Pagamento Seguro</span>
                     </div>
-                    <div class="flex items-center p-4 bg-cartao/40 border border-neutral-800 rounded-2xl shadow-sm">
-                        <i class="fas fa-bolt text-acento text-2xl mr-4"></i> 
+                    <div class="flex items-center p-4 bg-fundo-secundario border border-borda rounded-2xl">
+                        <i class="fas fa-bolt text-yellow-500 text-2xl mr-4"></i> 
                         <span class="text-sm font-medium">Processamento Instantâneo</span>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-cartao border border-neutral-700 p-10 rounded-[40px] shadow-2xl relative overflow-hidden animate-fade-in" style="animation-delay: 0.2s">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-acento/20 blur-3xl rounded-full"></div>
+            <div class="bg-fundo-secundario border border-borda p-10 rounded-[40px] shadow-lg relative overflow-hidden animate-fade-in" style="animation-delay: 0.2s">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100/50 blur-3xl rounded-full"></div>
                 
                 <div class="relative z-10 text-center">
                     <div class="flex items-center justify-center mb-8">
                         <div class="w-12 h-12 bg-acento rounded-xl flex items-center justify-center mr-4">
-                            <i class="fa-brands fa-pix text-fundo-principal text-2xl"></i>
+                            <i class="fa-brands fa-pix text-white text-2xl"></i>
                         </div>
                         <h2 class="text-2xl font-bold">Doar via PIX</h2>
                     </div>
 
-                    <div class="qr-gradient p-1.5 rounded-[32px] inline-block mb-8 shadow-2xl">
+                    <div class="qr-gradient p-1.5 rounded-[32px] inline-block mb-8 shadow-xl">
                         <div class="bg-white p-5 rounded-[26px]">
                             <img src="https://drive.google.com/thumbnail?sz=w1000&id=1sEPZGEqRJJaOs6--_w5k55R8XoI83sP7" 
                                  alt="QR Code PIX" 
@@ -120,14 +136,14 @@
 
                     <div class="space-y-4">
                         <p class="text-xs text-texto-secundario uppercase font-bold tracking-[0.2em]">Código PIX (Copia e Cola)</p>
-                        <div class="flex items-center bg-fundo-principal border border-neutral-700 rounded-2xl p-3 focus-within:border-acento transition-colors">
+                        <div class="flex items-center bg-white border border-borda rounded-2xl p-3 focus-within:border-acento transition-colors">
                             <input type="text" readonly value="00020126580014BR.GOV.BCB.PIX01368e3a594e-bec7-4f29-99c2-955c2e5853965204000053039865802BR5925Ezequiel Mendonca de Paiv6009SAO PAULO62140510Upa7RSz25Y630459D0" 
                                    id="pixCode" class="bg-transparent text-xs text-texto-secundario w-full outline-none px-3 truncate font-mono">
-                            <button onclick="copyPix()" class="bg-acento text-fundo-principal font-bold px-6 py-2.5 rounded-xl hover:bg-sky-300 transition-all text-xs active:scale-95 shadow-md">
+                            <button onclick="copyPix()" class="bg-acento text-white font-bold px-6 py-2.5 rounded-xl hover:bg-blue-700 transition-all text-xs active:scale-95 shadow-md">
                                 Copiar
                             </button>
                         </div>
-                        <div id="copyMessage" class="h-4 text-green-400 text-xs font-bold opacity-0 transition-opacity">Código copiado com sucesso!</div>
+                        <div id="copyMessage" class="h-4 text-green-500 text-xs font-bold opacity-0 transition-opacity">Código copiado com sucesso!</div>
                     </div>
                 </div>
             </div>
@@ -135,7 +151,7 @@
         </div>
     </main>
 
-    <footer class="py-12 border-t border-neutral-900 text-center bg-cartao/20">
+    <footer class="py-12 border-t border-borda text-center bg-fundo-secundario">
         <p class="text-texto-secundario text-sm">
             &copy; 2025 Ezequiel Paiva Soluções Tecnológicas. <br class="md:hidden"> 
             Todos os direitos reservados.
@@ -154,6 +170,5 @@
             setTimeout(() => msg.style.opacity = "0", 3000);
         }
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
