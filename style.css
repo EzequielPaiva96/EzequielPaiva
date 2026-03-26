@@ -34,6 +34,12 @@ body {
     line-height: 1.6;
 }
 
+@media (min-width: 1024px) {
+    html {
+        zoom: 0.9;
+    }
+}
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
