@@ -22,7 +22,7 @@ html, body {
     --borda: #E8EAED;
     --texto: #1A1A1A;
     --texto-sec: #5F6368;
-    --gradiente: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+    --gradiente: linear-gradient(135deg, #1a5ecf, #369eff, #5cb8ff, #369eff);
 }
 
 body {
@@ -92,7 +92,7 @@ body {
 
 /* ─── GRADIENT TEXT ─── */
 .gradient-text {
-    background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+    background: linear-gradient(135deg, #1a5ecf, #369eff, #5cb8ff, #369eff);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
