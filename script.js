@@ -14,6 +14,26 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', reveal);
     reveal(); // Initial check
 
+    // Hero fade-out on scroll
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        const fadeStart = 0;
+        const fadeEnd = window.innerHeight * 0.55;
+
+        const heroFade = () => {
+            const scrollY = window.scrollY;
+            const progress = Math.min(Math.max((scrollY - fadeStart) / (fadeEnd - fadeStart), 0), 1);
+            const opacity = 1 - progress;
+            const scale = 1 - (progress * 0.05);  // sutil zoom-out
+
+            heroSection.style.opacity = opacity;
+            heroSection.style.transform = `scale(${scale})`;
+        };
+
+        window.addEventListener('scroll', heroFade, { passive: true });
+        heroFade();
+    }
+
     // A lógica de menu e cabeçalho agora está unificada no header.js
 
     // Accessibility Functions
