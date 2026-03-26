@@ -22,11 +22,11 @@ function initHeader() {
         
         <!-- Menu Desktop -->
         <div class="hidden lg:flex space-x-8 text-sm font-medium text-texto-secundario">
-            <a href="${indexLink}" class="hover:text-acento transition duration-300">Home</a>
-            <a href="${isSubpage ? '../index.html#servicos' : '#servicos'}" class="hover:text-acento transition duration-300">Serviços</a>
-            <a href="${isSubpage ? '../index.html#experiencia' : '#experiencia'}" class="hover:text-acento transition duration-300">Resultados</a>
-            <a href="${isSubpage ? '../index.html#atendimento' : '#atendimento'}" class="hover:text-acento transition duration-300">Quem Atendemos</a>
-            <a href="${isSubpage ? '../index.html#contato' : '#contato'}" class="hover:text-acento transition duration-300">Contato</a>
+            <a href="${indexLink}" class="nav-link hover:text-acento transition duration-300">Home</a>
+            <a href="${isSubpage ? '../index.html#servicos' : '#servicos'}" class="nav-link hover:text-acento transition duration-300">Serviços</a>
+            <a href="${isSubpage ? '../index.html#experiencia' : '#experiencia'}" class="nav-link hover:text-acento transition duration-300">Resultados</a>
+            <a href="${isSubpage ? '../index.html#atendimento' : '#atendimento'}" class="nav-link hover:text-acento transition duration-300">Quem Atendemos</a>
+            <a href="${isSubpage ? '../index.html#contato' : '#contato'}" class="nav-link hover:text-acento transition duration-300">Contato</a>
         </div>
         
         <!-- Ferramentas e Mobile -->
