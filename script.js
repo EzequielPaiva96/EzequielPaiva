@@ -72,4 +72,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // A lógica de data do rodapé agora é gerenciada pelo footer.js
+
+    // Hero images: smooth load-in
+    const heroLayers = document.querySelectorAll('.hero-parallax-layer--front');
+    heroLayers.forEach((img) => {
+        if (!(img instanceof HTMLImageElement)) return;
+        const markLoaded = () => {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => img.classList.add('is-loaded'));
+            });
+        };
+        if (img.complete && img.naturalWidth > 0) {
+            markLoaded();
+        } else {
+            img.addEventListener('load', markLoaded, { once: true });
+            img.addEventListener('error', () => img.classList.add('is-loaded'), { once: true });
+        }
+    });
 });
