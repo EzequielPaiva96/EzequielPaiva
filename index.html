@@ -131,7 +131,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="tailwind.css">
-    <link rel="stylesheet" href="style.css">
 
     <script src="header.js" defer></script>
     <script src="footer.js" defer></script>
@@ -143,11 +142,6 @@
     <main>
         <!-- ═══════════ HERO ═══════════ -->
         <section class="hero-section pt-24">
-            <!-- Parallax (iPhone clock-like) layers -->
-            <div class="hero-parallax hero-parallax--back" aria-hidden="true">
-                <img class="hero-parallax-layer hero-parallax-layer--back" src="assets/hero_back.webp" alt="" decoding="async" loading="eager">
-                <div class="hero-parallax-vignette"></div>
-            </div>
             <!-- Floating particles -->
             <div class="hero-particles">
                 <div class="hero-particle"></div>
@@ -162,8 +156,8 @@
             <div class="hero-shape hero-shape-2"></div>
             <div class="hero-shape hero-shape-3"></div>
 
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:pl-6 lg:pr-28 py-20 lg:py-32">
-                <div class="max-w-2xl lg:max-w-xl animate-fade-in">
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-20 lg:py-32">
+                <div class="max-w-3xl animate-fade-in">
                     <!-- Greeting typewriter -->
                     <div id="hero-greeting" class="mb-8 block text-sm sm:text-base tracking-wide leading-relaxed" style="height: 3.5rem; overflow: hidden;">
                         <span id="greeting-line-1" class="block text-acento font-medium"></span>
@@ -199,11 +193,6 @@
                         <svg class="w-7 h-7 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7m14-8l-7 7-7-7"></path></svg>
                     </a>
                 </div>
-            </div>
-
-            <!-- Foreground layer (woman over text) -->
-            <div class="hero-parallax hero-parallax--front" aria-hidden="true">
-                <img class="hero-parallax-layer hero-parallax-layer--front" src="assets/hero_front.webp" alt="" decoding="async" loading="eager">
             </div>
         </section>
 
