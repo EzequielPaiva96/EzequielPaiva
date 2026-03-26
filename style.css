@@ -106,8 +106,35 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F0F4FF 60%, #E8EEFF 100%);
+    background-image: url('assets/hero_back.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
+}
+
+.hero-content {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .hero-content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        background-position: top -150px right 0%;
+    }
+
+    .hero-content {
+        padding-left: 250px;
+        padding-right: 64px;
+    }
 }
 
 .hero-parallax {
@@ -671,9 +698,20 @@ body {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
+    .hero-section {
+        background-image: url('assets/hero_back_mobo.webp');
+        background-position: center 58%;
+    }
+
     .card {
         width: 100%;
         height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        background-position: center 72%;
     }
 }
 
