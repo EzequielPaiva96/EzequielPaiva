@@ -108,8 +108,11 @@ body {
 
 /* ─── HERO SECTION ─── */
 .hero-section {
-    position: relative;
-    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     background-image: url('assets/hero_back.webp');
@@ -117,6 +120,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    z-index: 0;
+}
+
+/* Spacer que ocupa o espaço do hero fixo para empurrar o conteúdo */
+.hero-spacer {
+    height: 100vh;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -194,6 +204,21 @@ body {
         transform: none !important;
         transition: none !important;
     }
+}
+
+/* ─── CONTENT ABOVE HERO (todas as seções passam por cima do hero fixo) ─── */
+.content-above-hero {
+    position: relative;
+    z-index: 10;
+    background: var(--fundo-sec);
+}
+
+/* ─── SERVICES SLIDE-OVER (sobe por cima do hero ao rolar) ─── */
+.services-slide-over {
+    border-radius: 40px 40px 0 0;
+    box-shadow:
+        0 -24px 70px rgba(0, 0, 0, 0.15),
+        0 -6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .hero-particles {

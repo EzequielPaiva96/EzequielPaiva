@@ -204,8 +204,14 @@
             </div>
         </section>
 
+        <!-- Spacer para compensar o hero fixo -->
+        <div class="hero-spacer"></div>
+
+        <!-- Wrapper: todo o conteúdo que sobe por cima do hero -->
+        <div class="content-above-hero">
+
         <!-- ═══════════ SERVIÇOS ═══════════ -->
-        <section id="servicos" class="py-24 md:py-32 bg-fundo-secundario">
+        <section id="servicos" class="py-24 md:py-32 bg-fundo-secundario services-slide-over">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
                 <div class="text-center mb-16 reveal">
                     <span class="section-badge">Nossos Serviços</span>
@@ -449,9 +455,11 @@
             </div>
         </section>
 
+        </div><!-- /content-above-hero -->
+
     </main>
 
-    <footer id="site-footer-container" class="bg-fundo-secundario border-t border-borda mt-8 py-12"></footer>
+    <footer id="site-footer-container" class="bg-fundo-secundario border-t border-borda mt-8 py-12" style="position: relative; z-index: 10;"></footer>
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
