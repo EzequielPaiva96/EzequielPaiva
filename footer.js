@@ -66,7 +66,7 @@ function initFooter() {
     
     <!-- Botão Whatsapp Flutuante -->
     <a href="https://wa.me/+5598984204274" target="_blank"
-        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-2xl shadow-lg transition duration-300 ease-in-out transform hover:scale-110 z-50 flex items-center justify-center hover:shadow-xl">
+        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-110 z-50 flex items-center justify-center hover:shadow-xl">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
     `;
