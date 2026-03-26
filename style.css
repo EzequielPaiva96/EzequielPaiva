@@ -128,7 +128,7 @@ body {
 
 @media (min-width: 1024px) {
     .hero-section {
-        background-position: top -150px right 0%;
+        background-position: top -100px right -90px;
     }
 
     .hero-content {
