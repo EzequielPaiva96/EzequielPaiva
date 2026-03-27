@@ -133,6 +133,7 @@ body {
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top:100px;
 
 }
 
@@ -146,6 +147,7 @@ body {
     .hero-content {
         padding-left: 250px;
         padding-right: 64px;
+        padding-top:100px;
     }
 }
 
