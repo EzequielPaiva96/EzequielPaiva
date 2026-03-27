@@ -736,6 +736,10 @@ body {
         width: 100%;
         height: auto;
     }
+
+    .hero-content {
+        padding-top: 100px;
+    }
 }
 
 @media (max-width: 768px) {
