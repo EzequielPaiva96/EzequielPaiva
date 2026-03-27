@@ -797,6 +797,15 @@ body {
     padding-bottom: 3px;
     cursor: pointer;
     transition: color 0.3s ease;
+    display: block;         /* no mobile vai para linha de baixo */
+    margin-top: 4px;
+}
+
+@media (min-width: 640px) {
+    .greeting-cta-link {
+        display: inline;
+        margin-top: 0;
+    }
 }
 
 .greeting-cta-link::after {
