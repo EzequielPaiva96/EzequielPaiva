@@ -174,8 +174,8 @@
                     </div>
 
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
-                        <span class="block text-texto-claro">Infraestrutura e</span>
-                        <span class="gradient-text">Segurança de TI</span>
+                        <span class="block text-texto-claro">Um <span class="gradient-text">hub</span> de</span>
+                        <span class="gradient-text">Soluções em TI</span>
                     </h1>
                     
                     <p class="mt-4 max-w-xl text-xl sm:text-2xl font-semibold text-texto-claro mb-3 leading-snug">
@@ -189,9 +189,6 @@
                         <a href="#servicos" class="btn-primary">
                             Explore Nossos Serviços
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                        <a href="#contato" class="btn-secondary">
-                            Fale Conosco
                         </a>
                     </div>
                 </div>
@@ -487,6 +484,20 @@
             tick();
         }
 
+        // Typewriter que digita dentro de um elemento existente (sem limpar)
+        function typeInto(element, text, speed, onDone) {
+            let i = 0;
+            function tick() {
+                if (i < text.length) {
+                    element.textContent += text[i++];
+                    setTimeout(tick, speed);
+                } else if (onDone) {
+                    onDone();
+                }
+            }
+            tick();
+        }
+
         function startGreetingAnimation() {
             const line1 = document.getElementById('greeting-line-1');
             const line2 = document.getElementById('greeting-line-2');
@@ -500,14 +511,25 @@
             else period = 'noite';
 
             const text1 = 'Olá, seja bem vindo, tudo bem?';
-            const text2 = `O que te faz vir aqui nessa ${period}, fale com a gente.`;
+            const text2Part1 = `O que te faz vir aqui nessa ${period}, `;
+            const text2Part2 = 'fale com a gente.';
 
             typeText(line1, text1, 40, () => {
                 setTimeout(() => {
-                    typeText(line2, text2, 35, () => {
-                        setTimeout(() => {
-                            if (cursor) cursor.style.opacity = '0';
-                        }, 1200);
+                    // Digita a primeira parte normalmente
+                    typeText(line2, text2Part1, 35, () => {
+                        // Cria o link clicável para "fale com a gente."
+                        const link = document.createElement('a');
+                        link.href = '#contato';
+                        link.className = 'greeting-cta-link';
+                        line2.appendChild(link);
+
+                        // Digita dentro do link
+                        typeInto(link, text2Part2, 35, () => {
+                            setTimeout(() => {
+                                if (cursor) cursor.style.opacity = '0';
+                            }, 1200);
+                        });
                     });
                 }, 300);
             });

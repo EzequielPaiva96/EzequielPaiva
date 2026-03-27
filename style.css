@@ -787,3 +787,32 @@ body {
 .scroll-indicator:hover svg {
     color: var(--acento);
 }
+
+/* ─── GREETING CTA LINK (fale com a gente) ─── */
+.greeting-cta-link {
+    position: relative;
+    color: var(--acento);
+    font-weight: 500;
+    text-decoration: none;
+    padding-bottom: 3px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.greeting-cta-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #1a5ecf, #369eff, #5cb8ff);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.greeting-cta-link:hover::after {
+    transform: scaleX(1);
+}
