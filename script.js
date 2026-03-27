@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
         const fadeStart = 0;
-        const fadeEnd = window.innerHeight * 0.55;
+        const fadeEnd = window.innerHeight * 0.80;
 
         const heroFade = () => {
             const scrollY = window.scrollY;
