@@ -738,7 +738,9 @@ body {
     }
 
     .hero-content {
-        padding-top: 100px;
+        padding-top: 90px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
