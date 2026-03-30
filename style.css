@@ -109,10 +109,10 @@ body {
 /* ─── HERO SECTION ─── */
 .hero-section {
     position: fixed;
-    top: -60px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     background-image: url('assets/hero_back.webp');
@@ -729,16 +729,21 @@ body {
 @media (max-width: 1024px) {
     .hero-section {
         background-image: url('assets/hero_back_mobo.webp');
-        position: center;
-        width: 100%;
-        padding-top: 50px;
+        background-position: center 30%; /* enquadra a mulher */
+        background-size: cover;
+        height: 100vh;
+        height: 100dvh; /* suporte a dynamic viewport em iOS/Android */
+        padding-top: 0;
+    }
+
+    .hero-content {
+        padding-top: 90px; /* compensa o header fixo */
     }
 
     .card {
         width: 100%;
         height: auto;
     }
-
 }
 
 @media (min-width: 1024px) {
