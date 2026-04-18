@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
     <!-- Google tag (gtag.js) -->
@@ -20,6 +20,13 @@
     <link rel="apple-touch-icon" href="https://ezequielpaiva.com.br/assets/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        (function() {
+            var t = localStorage.getItem('tema');
+            if (t === 'escuro') document.documentElement.classList.add('tema-escuro');
+            else if (t === 'claro') document.documentElement.classList.add('tema-claro');
+        })();
+    </script>
     <link rel="stylesheet" href="../tailwind.css">
     <script src="../header.js" defer></script>
     <script src="../footer.js" defer></script>

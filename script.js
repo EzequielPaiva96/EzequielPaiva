@@ -36,7 +36,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // A lógica de menu e cabeçalho agora está unificada no header.js
 
-    // Accessibility Functions
+    // ─── THEME MANAGEMENT ───
+    // States: 'auto' (follows system), 'escuro' (forced dark), 'claro' (forced light)
+    function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+    }
+
+    function applyTheme(mode) {
+        const html = document.documentElement;
+        html.classList.remove('tema-escuro', 'tema-claro');
+
+        if (mode === 'escuro') {
+            html.classList.add('tema-escuro');
+        } else if (mode === 'claro') {
+            html.classList.add('tema-claro');
+        }
+        // 'auto' → no class, CSS @media handles it
+
+        // Update icon in header
+        updateThemeIcon(mode);
+    }
+
+    function updateThemeIcon(mode) {
+        const icon = document.getElementById('theme-toggle-icon');
+        if (!icon) return;
+
+        icon.classList.remove('fa-circle-half-stroke', 'fa-moon', 'fa-sun');
+
+        if (mode === 'auto') {
+            icon.classList.add('fa-circle-half-stroke');
+            icon.title = 'Tema: Automático (sistema)';
+        } else if (mode === 'escuro') {
+            icon.classList.add('fa-moon');
+            icon.title = 'Tema: Escuro';
+        } else {
+            icon.classList.add('fa-sun');
+            icon.title = 'Tema: Claro';
+        }
+    }
+
+    window.toggleTema = function() {
+        const saved = localStorage.getItem('tema') || 'auto';
+        let next;
+        if (saved === 'auto') next = 'escuro';
+        else if (saved === 'escuro') next = 'claro';
+        else next = 'auto';
+
+        localStorage.setItem('tema', next);
+        applyTheme(next);
+    };
+
+    // Listen for system theme changes (when user is in 'auto' mode)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const saved = localStorage.getItem('tema') || 'auto';
+        if (saved === 'auto') {
+            applyTheme('auto');
+        }
+    });
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('tema') || 'auto';
+    applyTheme(savedTheme);
+
+    // Accessibility Functions (alto contraste — kept separate from dark mode)
     window.toggleAltoContraste = function() {
         document.documentElement.classList.toggle('alto-contraste');
         const isHighContrast = document.documentElement.classList.contains('alto-contraste');
@@ -50,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Load saved preferences
+    // Load saved accessibility preferences
     if (localStorage.getItem('altoContraste') === 'true') {
         document.documentElement.classList.add('alto-contraste');
     }

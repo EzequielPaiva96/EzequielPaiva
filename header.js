@@ -31,8 +31,8 @@ function initHeader() {
         
         <!-- Ferramentas e Mobile -->
         <div class="flex items-center gap-2 sm:gap-3">
-            <button onclick="toggleAltoContraste()" title="Alto Contraste" class="p-2 flex items-center justify-center transition-all duration-300 text-texto-secundario hover:text-acento rounded-xl hover:bg-fundo-secundario">
-                <i class="fas fa-circle-half-stroke text-lg"></i>
+            <button onclick="toggleTema()" title="Alternar Tema" class="p-2 flex items-center justify-center transition-all duration-300 text-texto-secundario hover:text-acento rounded-xl hover:bg-fundo-secundario">
+                <i id="theme-toggle-icon" class="fas fa-circle-half-stroke text-lg"></i>
             </button>
             <button onclick="toggleVLibras()" title="VLibras" class="p-2 flex items-center justify-center transition-all duration-300 text-texto-secundario hover:text-acento rounded-xl hover:bg-fundo-secundario">
                 <i class="fas fa-hands-asl-interpreting text-md"></i>

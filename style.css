@@ -23,6 +23,39 @@ html, body {
     --texto: #1A1A1A;
     --texto-sec: #5F6368;
     --gradiente: linear-gradient(135deg, #1a5ecf, #369eff, #5cb8ff, #369eff);
+    color-scheme: light;
+}
+
+/* ─── DARK THEME (auto from system) ─── */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) {
+        --acento: #5B9BF3;
+        --acento-rgb: 91, 155, 243;
+        --acento-hover: #7BB3FF;
+        --fundo: #0F1117;
+        --fundo-sec: #161922;
+        --cartao: #1C1F2E;
+        --borda: #2A2D3A;
+        --texto: #E8EAED;
+        --texto-sec: #9AA0A6;
+        --gradiente: linear-gradient(135deg, #5B9BF3, #369eff, #5cb8ff, #369eff);
+        color-scheme: dark;
+    }
+}
+
+/* ─── DARK THEME (manual class override) ─── */
+.tema-escuro {
+    --acento: #5B9BF3;
+    --acento-rgb: 91, 155, 243;
+    --acento-hover: #7BB3FF;
+    --fundo: #0F1117;
+    --fundo-sec: #161922;
+    --cartao: #1C1F2E;
+    --borda: #2A2D3A;
+    --texto: #E8EAED;
+    --texto-sec: #9AA0A6;
+    --gradiente: linear-gradient(135deg, #5B9BF3, #369eff, #5cb8ff, #369eff);
+    color-scheme: dark;
 }
 
 body {
@@ -32,6 +65,7 @@ body {
     background-color: var(--fundo);
     color: var(--texto);
     line-height: 1.6;
+    transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 @media (min-width: 1024px) {
@@ -549,7 +583,7 @@ body {
 /* ─── STRATEGY ANIMATION BOX ─── */
 .strategy-box {
     position: relative;
-    background: linear-gradient(135deg, #F8F9FA, #EEF1F5);
+    background: linear-gradient(135deg, var(--fundo-sec), var(--borda));
     border-radius: 48px;
     border: 1px solid var(--borda);
     overflow: hidden;
@@ -564,7 +598,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(66,133,244,0.05), transparent 60%);
+    background: linear-gradient(135deg, rgba(var(--acento-rgb), 0.05), transparent 60%);
     z-index: 0;
 }
 
@@ -910,4 +944,329 @@ body {
 
 .greeting-cta-link:hover::after {
     transform: scaleX(1);
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* ─── DARK THEME OVERRIDES ─── */
+/* Applies to both auto (system) and manual (.tema-escuro) */
+/* ═════════════════════════════════════════════════════════ */
+
+/* Dark mode helper: matches both auto and manual */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) body,
+    :root:not(.tema-claro) .bg-fundo-principal {
+        background-color: var(--fundo);
+        color: var(--texto);
+    }
+}
+
+.tema-escuro body,
+.tema-escuro .bg-fundo-principal {
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+/* Header + Footer backgrounds in dark */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) header,
+    :root:not(.tema-claro) .bg-fundo-principal\/95 {
+        background-color: rgba(15, 17, 23, 0.95) !important;
+    }
+
+    :root:not(.tema-claro) .bg-fundo-secundario {
+        background-color: var(--fundo-sec) !important;
+    }
+}
+
+.tema-escuro header,
+.tema-escuro .bg-fundo-principal\/95 {
+    background-color: rgba(15, 17, 23, 0.95) !important;
+}
+
+.tema-escuro .bg-fundo-secundario {
+    background-color: var(--fundo-sec) !important;
+}
+
+/* Hero section dark overlay — darker vignette */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .hero-parallax-vignette {
+        background:
+            radial-gradient(1200px 700px at 25% 40%, rgba(0,0,0,0.35), rgba(0,0,0,0) 60%),
+            linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.55));
+    }
+
+    :root:not(.tema-claro) .hero-section {
+        background-color: #0a0c12;
+    }
+}
+
+.tema-escuro .hero-parallax-vignette {
+    background:
+        radial-gradient(1200px 700px at 25% 40%, rgba(0,0,0,0.35), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.55));
+}
+
+.tema-escuro .hero-section {
+    background-color: #0a0c12;
+}
+
+/* Services slide-over rounded section */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .services-slide-over {
+        box-shadow:
+            0 -24px 70px rgba(0, 0, 0, 0.4),
+            0 -6px 20px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.tema-escuro .services-slide-over {
+    box-shadow:
+        0 -24px 70px rgba(0, 0, 0, 0.4),
+        0 -6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Hardcoded bg-white elements → dark card */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .bg-white {
+        background-color: var(--cartao) !important;
+    }
+
+    :root:not(.tema-claro) .text-texto-claro {
+        color: var(--texto) !important;
+    }
+
+    :root:not(.tema-claro) .text-texto-secundario {
+        color: var(--texto-sec) !important;
+    }
+
+    :root:not(.tema-claro) .border-borda {
+        border-color: var(--borda) !important;
+    }
+}
+
+.tema-escuro .bg-white {
+    background-color: var(--cartao) !important;
+}
+
+.tema-escuro .text-texto-claro {
+    color: var(--texto) !important;
+}
+
+.tema-escuro .text-texto-secundario {
+    color: var(--texto-sec) !important;
+}
+
+.tema-escuro .border-borda {
+    border-color: var(--borda) !important;
+}
+
+/* Feature icon backgrounds (bg-blue-50, bg-green-50) */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .bg-blue-50 {
+        background-color: rgba(91, 155, 243, 0.12) !important;
+    }
+
+    :root:not(.tema-claro) .bg-green-50 {
+        background-color: rgba(52, 168, 83, 0.12) !important;
+    }
+
+    :root:not(.tema-claro) .bg-blue-100\/40 {
+        background-color: rgba(91, 155, 243, 0.08) !important;
+    }
+
+    :root:not(.tema-claro) .bg-blue-200\/30 {
+        background-color: rgba(91, 155, 243, 0.06) !important;
+    }
+
+    :root:not(.tema-claro) .bg-green-200\/20 {
+        background-color: rgba(52, 168, 83, 0.05) !important;
+    }
+}
+
+.tema-escuro .bg-blue-50 {
+    background-color: rgba(91, 155, 243, 0.12) !important;
+}
+
+.tema-escuro .bg-green-50 {
+    background-color: rgba(52, 168, 83, 0.12) !important;
+}
+
+.tema-escuro .bg-blue-100\/40 {
+    background-color: rgba(91, 155, 243, 0.08) !important;
+}
+
+.tema-escuro .bg-blue-200\/30 {
+    background-color: rgba(91, 155, 243, 0.06) !important;
+}
+
+.tema-escuro .bg-green-200\/20 {
+    background-color: rgba(52, 168, 83, 0.05) !important;
+}
+
+/* Section badge dark */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .section-badge {
+        background: rgba(var(--acento-rgb), 0.12);
+    }
+}
+
+.tema-escuro .section-badge {
+    background: rgba(var(--acento-rgb), 0.12);
+}
+
+/* Feature card dark backgrounds */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .feature-card {
+        background: var(--cartao);
+        border-color: var(--borda);
+    }
+
+    :root:not(.tema-claro) .audience-card {
+        background: var(--cartao);
+    }
+
+    :root:not(.tema-claro) .audience-card:hover {
+        background: var(--fundo-sec);
+        border-color: var(--borda);
+    }
+}
+
+.tema-escuro .feature-card {
+    background: var(--cartao);
+    border-color: var(--borda);
+}
+
+.tema-escuro .audience-card {
+    background: var(--cartao);
+}
+
+.tema-escuro .audience-card:hover {
+    background: var(--fundo-sec);
+    border-color: var(--borda);
+}
+
+/* Audience icon dark */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .audience-icon {
+        background: linear-gradient(135deg, rgba(var(--acento-rgb), 0.1), rgba(var(--acento-rgb), 0.05));
+    }
+}
+
+.tema-escuro .audience-icon {
+    background: linear-gradient(135deg, rgba(var(--acento-rgb), 0.1), rgba(var(--acento-rgb), 0.05));
+}
+
+/* CTA section stays dark — only needs lighter text if needed */
+/* Footer border */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .border-neutral-800 {
+        border-color: var(--borda) !important;
+    }
+}
+
+.tema-escuro .border-neutral-800 {
+    border-color: var(--borda) !important;
+}
+
+/* CTA white button in dark mode inverted */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) a.bg-white.text-gray-900 {
+        background-color: #E8EAED !important;
+        color: #0F1117 !important;
+    }
+
+    :root:not(.tema-claro) a.bg-white.text-gray-900:hover {
+        background-color: #D2D5D9 !important;
+    }
+}
+
+.tema-escuro a.bg-white.text-gray-900 {
+    background-color: #E8EAED !important;
+    color: #0F1117 !important;
+}
+
+.tema-escuro a.bg-white.text-gray-900:hover {
+    background-color: #D2D5D9 !important;
+}
+
+/* Header logo — subtle brightness in dark */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) header img {
+        filter: brightness(1.15);
+    }
+}
+
+.tema-escuro header img {
+    filter: brightness(1.15);
+}
+
+/* Content above hero background */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .content-above-hero {
+        background: var(--fundo-sec);
+    }
+}
+
+.tema-escuro .content-above-hero {
+    background: var(--fundo-sec);
+}
+
+/* Hero decorative shapes — adjusted for dark bg */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) .hero-shape-1 {
+        background: rgba(91, 155, 243, 0.06);
+    }
+    :root:not(.tema-claro) .hero-shape-2 {
+        background: rgba(234, 67, 53, 0.04);
+    }
+    :root:not(.tema-claro) .hero-shape-3 {
+        background: rgba(52, 168, 83, 0.04);
+    }
+}
+
+.tema-escuro .hero-shape-1 {
+    background: rgba(91, 155, 243, 0.06);
+}
+.tema-escuro .hero-shape-2 {
+    background: rgba(234, 67, 53, 0.04);
+}
+.tema-escuro .hero-shape-3 {
+    background: rgba(52, 168, 83, 0.04);
+}
+
+
+
+/* Scrollbar dark */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) ::-webkit-scrollbar {
+        width: 8px;
+        background: var(--fundo);
+    }
+    :root:not(.tema-claro) ::-webkit-scrollbar-thumb {
+        background: var(--borda);
+        border-radius: 4px;
+    }
+}
+
+.tema-escuro ::-webkit-scrollbar {
+    width: 8px;
+    background: var(--fundo);
+}
+
+.tema-escuro ::-webkit-scrollbar-thumb {
+    background: var(--borda);
+    border-radius: 4px;
+}
+
+/* Text selection */
+@media (prefers-color-scheme: dark) {
+    :root:not(.tema-claro) ::selection {
+        background: rgba(var(--acento-rgb), 0.3);
+        color: #fff;
+    }
+}
+
+.tema-escuro ::selection {
+    background: rgba(var(--acento-rgb), 0.3);
+    color: #fff;
 }

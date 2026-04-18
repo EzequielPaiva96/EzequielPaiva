@@ -130,6 +130,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Early theme detection to prevent FOUC -->
+    <script>
+        (function() {
+            var t = localStorage.getItem('tema');
+            if (t === 'escuro') document.documentElement.classList.add('tema-escuro');
+            else if (t === 'claro') document.documentElement.classList.add('tema-claro');
+        })();
+    </script>
+
     <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="style.css">
 
