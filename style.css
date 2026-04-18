@@ -313,47 +313,87 @@ body {
 /* ─── CARDS ─── */
 .card {
     position: relative;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0), 0 2px 2px rgba(0, 0, 0, 0.034),
-    0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.027);
-    border-radius: 15px;
-    padding: 32px;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 36px 32px 32px;
     height: 100%;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Top accent gradient bar */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1a5ecf, #369eff, #5cb8ff);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Bottom shimmer line on hover */
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(26, 115, 232, 0.6), transparent);
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
-    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
-  
+    transform: translateY(-8px);
+    border-color: rgba(var(--acento-rgb), 0.2);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.04),
+        0 12px 32px rgba(26, 115, 232, 0.08),
+        0 24px 48px rgba(0, 0, 0, 0.04);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover::after {
+    transform: scaleX(1);
 }
 
 .card .icon-wrapper {
-    width: 64px;
-    height: 64px;
-    background: linear-gradient(135deg, rgba(66,133,244,0.1), rgba(66,133,244,0.05));
-    border-radius: 20px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(145deg, rgba(26, 115, 232, 0.08), rgba(54, 158, 255, 0.04));
+    border: 1px solid rgba(26, 115, 232, 0.08);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    backdrop-filter: blur(10px);
+    margin-bottom: 24px;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card:hover .icon-wrapper {
-    background: linear-gradient(135deg, #4285F4, #1A73E8);
-    transform: scale(1.08) rotate(3deg);
-    box-shadow: 0 8px 24px rgba(66, 134, 244, 0);
+    background: linear-gradient(145deg, #1A73E8, #369eff);
+    border-color: transparent;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.25);
 }
 
 .card .icon {
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     color: var(--acento);
     transition: all 0.4s ease;
 }
@@ -364,10 +404,11 @@ body {
 
 .card h3,
 .card h4 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: var(--texto);
+    letter-spacing: -0.01em;
     transition: color 0.3s ease;
 }
 
@@ -377,22 +418,28 @@ body {
 }
 
 .card p {
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.75;
     color: var(--texto-sec);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     flex-grow: 1;
 }
 
 .card .arrow-link {
     display: flex;
     align-items: center;
+    gap: 6px;
     color: var(--acento);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.01em;
     opacity: 0;
-    transform: translateX(-8px);
-    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(-10px);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card .arrow-link svg {
+    transition: transform 0.3s ease;
 }
 
 .card:hover .arrow-link {
@@ -400,19 +447,46 @@ body {
     transform: translateX(0);
 }
 
+.card:hover .arrow-link svg {
+    transform: translateX(3px);
+}
+
 /* Mobile card active state */
 .card.is-active {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(var(--acento-rgb), 0.2);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.04),
+        0 12px 32px rgba(26, 115, 232, 0.08);
+}
+
+.card.is-active::before {
+    opacity: 1;
 }
 
 .card.is-active .icon-wrapper {
-    background: linear-gradient(135deg, #4285F4, #1A73E8);
-    transform: scale(1.08);
+    background: linear-gradient(145deg, #1A73E8, #369eff);
+    border-color: transparent;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.25);
 }
 
 .card.is-active .icon { color: #FFFFFF; }
 .card.is-active h3, .card.is-active h4 { color: var(--acento); }
 .card.is-active .arrow-link { opacity: 1; transform: translateX(0); }
+
+/* Staggered card reveal */
+.card.reveal:nth-child(1)  { transition-delay: 0s; }
+.card.reveal:nth-child(2)  { transition-delay: 0.06s; }
+.card.reveal:nth-child(3)  { transition-delay: 0.12s; }
+.card.reveal:nth-child(4)  { transition-delay: 0.18s; }
+.card.reveal:nth-child(5)  { transition-delay: 0.24s; }
+.card.reveal:nth-child(6)  { transition-delay: 0.30s; }
+.card.reveal:nth-child(7)  { transition-delay: 0.36s; }
+.card.reveal:nth-child(8)  { transition-delay: 0.42s; }
+.card.reveal:nth-child(9)  { transition-delay: 0.48s; }
+.card.reveal:nth-child(10) { transition-delay: 0.54s; }
+.card.reveal:nth-child(11) { transition-delay: 0.60s; }
+.card.reveal:nth-child(12) { transition-delay: 0.66s; }
 
 /* ─── FEATURE CARDS (Excelência) ─── */
 .feature-card {
