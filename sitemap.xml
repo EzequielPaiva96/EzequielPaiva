@@ -1,78 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ezequielpaiva.com.br/</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://ezequielpaiva.com.br/assets/logo.webp</image:loc>
-      <image:title>Logo Ezequiel Paiva – Soluções em TI</image:title>
-      <image:caption>Logotipo da Ezequiel Paiva Soluções em TI, empresa de suporte técnico, cibersegurança e infraestrutura em São Luís, MA.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://ezequielpaiva.com.br/assets/1.webp</image:loc>
-      <image:title>Banner Ezequiel Paiva – Infraestrutura e Segurança de TI em São Luís MA</image:title>
-      <image:caption>Empresa especializada em suporte de TI, redes, firewall, cibersegurança e terceirização em São Luís, Maranhão.</image:caption>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://ezequielpaiva.com.br/servicos/ciberseguranca.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://ezequielpaiva.com.br/doacao.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
-
-  <url>
-    <loc>https://ezequielpaiva.com.br/servicos/terceirizacao-ti.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://ezequielpaiva.com.br/servicos/consultoria-rede-firewall.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://ezequielpaiva.com.br/servicos/cabeamento-estruturado.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://ezequielpaiva.com.br/servicos/desenvolvimento.html</loc>
-    <lastmod>2026-03-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <url>
     <loc>https://ezequielpaiva.com.br/servicos/automacao.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/cabeamento-estruturado.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/captive-portal.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://ezequielpaiva.com.br/servicos/cftv.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/ciberseguranca.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/consultoria-rede-firewall.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/desenvolvimento.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/hardware.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://ezequielpaiva.com.br/servicos/ongs.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/reparo-impressoras.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/reparo-notebooks.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/reparos.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/terceirizacao-ti.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/servicos/treinamento-produtividade.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/projetos/dispemail/index.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/projetos/dispemail/privacidade.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/projetos/dispemail/termos.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/projetos/gety/index.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ezequielpaiva.com.br/404.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
 </urlset>

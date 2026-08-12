@@ -15,8 +15,8 @@ function initFooter() {
                 <h4 class="text-xl font-bold text-acento mb-3">Ezequiel Paiva | <span class="text-texto-claro">Soluções em TI </span></h4>
                 <p class="text-texto-secundario">Transformando tecnologia em vantagem competitiva para o seu negócio.</p>
                 <div class="flex md:justify-start gap-4 mt-4 text-texto-claro">
-                    <a href="https://linkedin.com" target="_blank" class="hover:text-acento transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="hover:text-acento transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-acento transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-acento transition-colors"><i class="fab fa-instagram text-xl"></i></a>
                 </div>
             </div>
 
@@ -46,7 +46,7 @@ function initFooter() {
     </div>
     
     <!-- Botão Whatsapp Flutuante -->
-    <a href="https://wa.me/+5598984204274" target="_blank"
+    <a href="https://wa.me/+5598984204274" target="_blank" rel="noopener noreferrer"
         class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-110 z-50 flex items-center justify-center">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>

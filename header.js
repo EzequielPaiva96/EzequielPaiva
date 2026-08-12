@@ -56,8 +56,8 @@ function initHeader() {
         <a href="${isSubpage ? '../index.html#atendimento' : '#atendimento'}" class="block py-3 text-texto-claro hover:text-acento transition duration-300 rounded-xl hover:bg-fundo-secundario">Quem Atendemos</a>
         <a href="${isSubpage ? '../index.html#contato' : '#contato'}" class="block py-3 text-texto-claro hover:text-acento transition duration-300 rounded-xl hover:bg-fundo-secundario">Contato</a>
         <div class="flex justify-center gap-6 py-4 border-t border-borda mt-2">
-            <a href="https://linkedin.com" target="_blank" class="text-texto-secundario hover:text-acento transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
-            <a href="https://instagram.com" target="_blank" class="text-texto-secundario hover:text-acento transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-texto-secundario hover:text-acento transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-texto-secundario hover:text-acento transition-colors"><i class="fab fa-instagram text-lg"></i></a>
         </div>
     </div>
     `;
